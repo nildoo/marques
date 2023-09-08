@@ -1,0 +1,76 @@
+@import "definitions";
+
+.panel.panel-main {
+  box-shadow: none;
+
+  &.panel-cart {
+    hr {
+      margin: 10px 0;
+    }
+  }
+
+  .panel-heading {
+    background: @main_color;
+    color: #ffffff;
+  }
+  .panel-body {
+    border: 1px solid #ddd;
+    border-top: none;
+    .border-radius-bottom-left(4px);
+    .border-radius-bottom-right(4px);
+  }
+}
+
+.panel.panel-form {
+  border-color: #dddddd;
+  margin: 55px 0;
+  .panel-heading {
+    background: @main_color;
+    color: #ffffff;
+  }
+  .panel-body {
+    background: #fafafa;
+    border-radius: 4px;
+  }
+}
+
+.panel-content {
+  background: #ffffff;
+  border-bottom: 1px solid #dddddd;
+  border-top: 1px solid #dddddd;
+}
+
+.panel.panel-produto {
+  box-shadow: none;
+
+  &.panel-cart {
+    hr {
+      margin: 10px 0;
+    }
+  }
+
+  .panel-heading {
+    background: @main_color;
+    color: #ffffff;
+  }
+  .panel-body {
+    border: none;
+    .text-left, .text-right {
+      margin: 5px 0;
+      text-align: center;
+    }
+  }
+}
+
+.panel.panel-form {
+  border-color: #dddddd;
+  margin: 55px 0;
+  .panel-heading {
+    background: @main_color;
+    color: #ffffff;
+  }
+  .panel-body {
+    background: #fafafa;
+    border-radius: 4px;
+  }
+}

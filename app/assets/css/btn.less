@@ -1,0 +1,121 @@
+@import "definitions";
+
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+  outline: 0;
+  outline-offset: 0;
+}
+
+.btn {
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  // padding: 7px 38px;
+  font-size: 16px;
+  &:hover, &:focus, &:focus-visible {
+    color: #ffffff;
+    outline: none;
+    outline-offset: 0;
+    outline: -webkit-focus-ring-color auto 0;
+  }
+
+  &.btn-default {
+    color: #000;
+  }
+  &.btn-blue {
+    background-color: @blue;
+    &:hover, &:focus {
+      background-color: darken(@blue, 10%);
+    }
+  }
+  &.btn-trans {
+    border: solid 1px #fff;
+    background: transparent;
+    border-radius: 0;
+    padding: 6px 15px;
+    &:hover {
+      background: @white;
+      color: #000;
+    }
+  }
+  &.btn-send{
+    color: #ffffff;
+    background-color: @blue;
+    border-color: #558dd9;
+    &:hover, &:focus {
+      border-color: rgb(60,116,192);
+      background-color: darken(@blue, 10%);
+    }
+  }
+  &.btn-red {
+    background-color: @red;
+    font-size: 16px;
+    &:hover, &:focus {
+      background-color: darken(@red, 10%);
+    }
+  }
+  &.btn-green {
+    background-color: @greenButton;
+    &:hover, &:focus {
+      background-color: darken(@greenButton, 10%);
+    }
+  }
+  &.btn-wpp {
+    background-color:#25D366;
+;
+    &:hover, &:focus {
+      background-color: darken(#25D366, 10%);
+    }
+  }
+
+//SITE FORMA
+//button Primary
+  &.btn-darkBlue{
+    background-color: @siteColor2;
+    &:hover, &:focus {
+      background-color: darken(@pMainColor, 10%);
+    }
+  }
+
+  &.btn-darkRed{
+    background-color: @elRed1;
+    &:hover, &:focus {
+      background-color: darken(@elRed1, 10%);
+    }
+  }
+  &.btn-darkGray{
+    background-color: @siteColor5;
+    &:hover, &:focus {
+      background-color: darken(@siteColor5, 10%);
+    }
+  }
+//button Primary end
+
+//button Outline
+&.btn-outGray{
+  background-color: @siteColor6;
+  &:hover, &:focus {
+    background-color: darken(@siteColor6, 10%);
+  }
+}
+&.btn-outWhite{
+  background-color: @siteColor7;
+  &:hover, &:focus {
+    background-color: darken(@siteColor7, 10%);
+  }
+}
+&.btn-transparent{
+  background-color: transparent;
+  border: solid #fff 2px;
+  &:hover, &:focus {
+    background-color: darken(@siteColor7, 10%);
+  }
+}
+//button Outline end
+
+//SITE FORMA
+
+}
+
+.btn-access {
+  padding: 10px 15px;
+}

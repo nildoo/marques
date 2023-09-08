@@ -1,0 +1,122 @@
+/* Funções */
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn:active:focus,
+.btn:focus {
+  outline: 0;
+  outline-offset: 0;
+}
+.btn {
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+}
+.btn:hover,
+.btn:focus,
+.btn:focus-visible {
+  color: #ffffff;
+  outline: none;
+  outline-offset: 0;
+  outline: -webkit-focus-ring-color auto 0;
+}
+.btn.btn-default {
+  color: #000;
+}
+.btn.btn-blue {
+  background-color: #072F57;
+}
+.btn.btn-blue:hover,
+.btn.btn-blue:focus {
+  background-color: #031528;
+}
+.btn.btn-trans {
+  border: solid 1px #fff;
+  background: transparent;
+  border-radius: 0;
+  padding: 6px 15px;
+}
+.btn.btn-trans:hover {
+  background: #ffffff;
+  color: #000;
+}
+.btn.btn-send {
+  color: #ffffff;
+  background-color: #072F57;
+  border-color: #558dd9;
+}
+.btn.btn-send:hover,
+.btn.btn-send:focus {
+  border-color: #3c74c0;
+  background-color: #031528;
+}
+.btn.btn-red {
+  background-color: #E10000;
+  font-size: 16px;
+}
+.btn.btn-red:hover,
+.btn.btn-red:focus {
+  background-color: #ae0000;
+}
+.btn.btn-green {
+  background-color: #1aa38b;
+}
+.btn.btn-green:hover,
+.btn.btn-green:focus {
+  background-color: #137765;
+}
+.btn.btn-wpp {
+  background-color: #25D366;
+}
+.btn.btn-wpp:hover,
+.btn.btn-wpp:focus {
+  background-color: #1da851;
+}
+.btn.btn-darkBlue {
+  background-color: #302841;
+}
+.btn.btn-darkBlue:hover,
+.btn.btn-darkBlue:focus {
+  background-color: #13151e;
+}
+.btn.btn-darkRed {
+  background-color: #E10000;
+}
+.btn.btn-darkRed:hover,
+.btn.btn-darkRed:focus {
+  background-color: #ae0000;
+}
+.btn.btn-darkGray {
+  background-color: #D9D5E2;
+}
+.btn.btn-darkGray:hover,
+.btn.btn-darkGray:focus {
+  background-color: #beb7cd;
+}
+.btn.btn-outGray {
+  background-color: #F9F7FC;
+}
+.btn.btn-outGray:hover,
+.btn.btn-outGray:focus {
+  background-color: #ddd2ee;
+}
+.btn.btn-outWhite {
+  background-color: #EAEAEA;
+}
+.btn.btn-outWhite:hover,
+.btn.btn-outWhite:focus {
+  background-color: #d1d1d1;
+}
+.btn.btn-transparent {
+  background-color: transparent;
+  border: solid #fff 2px;
+}
+.btn.btn-transparent:hover,
+.btn.btn-transparent:focus {
+  background-color: #d1d1d1;
+}
+.btn-access {
+  padding: 10px 15px;
+}

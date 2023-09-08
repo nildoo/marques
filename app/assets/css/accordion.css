@@ -1,0 +1,90 @@
+.accordion-panel .accordion {
+  margin-bottom: 10px;
+  border: 1px solid #e9e9e9;
+}
+.accordion-panel .accordion dt {
+  display: block;
+  cursor: pointer;
+  padding: 18px;
+  position: relative;
+  font-size: 16px!important;
+  font-family: 'playfair display', serif;
+  background: white;
+  border-bottom: 0 solid #e9e9e9;
+}
+.accordion-panel .accordion dd {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.35s ease-out;
+  margin-left: 0;
+  background: white;
+}
+.accordion-panel .content {
+  padding: 15px 25px 25px;
+  overflow: auto;
+  font-family: 'Poppins', sans-serif;
+  border-top: 0 solid #e9e9e9 !important;
+}
+.accordion-panel .content hr {
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+.accordion-panel .content p {
+  font-size: 14px;
+  line-height: 26px;
+}
+.accordion-panel .plus-icon {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  position: relative;
+  transition: transform 0.35s ease-out;
+  position: absolute;
+  right: 35px;
+  top: 50%;
+  margin-top: -12px;
+}
+.accordion-panel .plus-icon:before,
+.accordion-panel .plus-icon:after {
+  content: '';
+  background: #daa520;
+  position: absolute;
+}
+.accordion-panel .plus-icon:before {
+  width: 2px;
+  height: 15px;
+  margin-left: -0.5px;
+  left: 50%;
+}
+.accordion-panel .plus-icon:after {
+  width: 15px;
+  height: 2px;
+  margin-top: -0.5px;
+  top: 50%;
+  opacity: 1;
+  transition: opacity 0.35s ease-out;
+}
+.accordion-panel .is-open .plus-icon {
+  transform: rotate(90deg);
+}
+.accordion-panel .is-open .plus-icon:after {
+  opacity: 0;
+}
+.accordion-panel .hidden {
+  display: none;
+}
+.accordion-panel .open-btn,
+.accordion-panel .close-btn {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  width: 90px;
+}
+.accordion-panel .buttons-wrapper {
+  position: relative;
+}
+.accordion-panel .buttons-wrapper .plus-icon {
+  position: absolute;
+  right: 10px;
+  top: 12px;
+}

@@ -1,0 +1,469 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  overflow-x: hidden;
+}
+h1 {
+  display: block;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  font-weight: normal;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+p {
+  margin: 0;
+  text-align: justify;
+  font-size: 16px;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  display: block;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
+}
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+textarea {
+  resize: none;
+}
+.text-main {
+  color: #cd1827;
+}
+/* Funções */
+.panel.panel-main {
+  box-shadow: none;
+}
+.panel.panel-main.panel-cart hr {
+  margin: 10px 0;
+}
+.panel.panel-main .panel-heading {
+  background: #cd1827;
+  color: #ffffff;
+}
+.panel.panel-main .panel-body {
+  border: 1px solid #ddd;
+  border-top: none;
+  border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+}
+.panel.panel-form {
+  border-color: #dddddd;
+  margin: 55px 0;
+}
+.panel.panel-form .panel-heading {
+  background: #cd1827;
+  color: #ffffff;
+}
+.panel.panel-form .panel-body {
+  background: #fafafa;
+  border-radius: 4px;
+}
+.panel-content {
+  background: #ffffff;
+  border-bottom: 1px solid #dddddd;
+  border-top: 1px solid #dddddd;
+}
+.panel.panel-produto {
+  box-shadow: none;
+}
+.panel.panel-produto.panel-cart hr {
+  margin: 10px 0;
+}
+.panel.panel-produto .panel-heading {
+  background: #cd1827;
+  color: #ffffff;
+}
+.panel.panel-produto .panel-body {
+  border: none;
+}
+.panel.panel-produto .panel-body .text-left,
+.panel.panel-produto .panel-body .text-right {
+  margin: 5px 0;
+  text-align: center;
+}
+.panel.panel-form {
+  border-color: #dddddd;
+  margin: 55px 0;
+}
+.panel.panel-form .panel-heading {
+  background: #cd1827;
+  color: #ffffff;
+}
+.panel.panel-form .panel-body {
+  background: #fafafa;
+  border-radius: 4px;
+}
+.btn {
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+}
+.btn:hover,
+.btn:focus {
+  color: #ffffff;
+  outline: none;
+  outline-offset: 0;
+}
+.btn.btn-default {
+  color: #000;
+}
+.btn.btn-blue {
+  background-color: #072F57;
+}
+.btn.btn-blue:hover,
+.btn.btn-blue:focus {
+  background-color: #031528;
+}
+.btn.btn-trans {
+  border: solid 1px #fff;
+  background: transparent;
+  border-radius: 0;
+  padding: 6px 15px;
+}
+.btn.btn-trans:hover,
+.btn.btn-trans:focus {
+  background: #ffffff;
+  color: #000;
+}
+.btn.btn-send {
+  color: #ffffff;
+  background-color: #072F57;
+  border-color: #558dd9;
+}
+.btn.btn-send:hover,
+.btn.btn-send:focus {
+  border-color: #3c74c0;
+  background-color: #031528;
+}
+.btn.btn-red {
+  background-color: #E10000;
+  font-size: 16px;
+}
+.btn.btn-red:hover,
+.btn.btn-red:focus {
+  background-color: #ae0000;
+}
+.btn.btn-green {
+  background-color: #37ba75;
+}
+.btn.btn-green:hover,
+.btn.btn-green:focus {
+  background-color: #2b935c;
+}
+.btn.btn-wpp {
+  background-color: #25D366;
+}
+.btn.btn-wpp:hover,
+.btn.btn-wpp:focus {
+  background-color: #1da851;
+}
+.btn.btn-darkBlue {
+  background-color: #302841;
+}
+.btn.btn-darkBlue:hover,
+.btn.btn-darkBlue:focus {
+  background-color: #13151e;
+}
+.btn.btn-darkRed {
+  background-color: #E10000;
+}
+.btn.btn-darkRed:hover,
+.btn.btn-darkRed:focus {
+  background-color: #ae0000;
+}
+.btn.btn-darkGray {
+  background-color: #D9D5E2;
+}
+.btn.btn-darkGray:hover,
+.btn.btn-darkGray:focus {
+  background-color: #beb7cd;
+}
+.btn.btn-outGray {
+  background-color: #F9F7FC;
+}
+.btn.btn-outGray:hover,
+.btn.btn-outGray:focus {
+  background-color: #ddd2ee;
+}
+.btn.btn-outWhite {
+  background-color: #EAEAEA;
+}
+.btn.btn-outWhite:hover,
+.btn.btn-outWhite:focus {
+  background-color: #d1d1d1;
+}
+.btn.btn-transparent {
+  background-color: transparent;
+  border: solid #fff 2px;
+}
+.btn.btn-transparent:hover,
+.btn.btn-transparent:focus {
+  background-color: #d1d1d1;
+}
+.btn-access {
+  padding: 10px 15px;
+}
+input {
+  outline: none;
+}
+.form-control:focus {
+  border-color: #daa520;
+  box-shadow: none;
+}
+form .col-lg-1,
+form .col-lg-10,
+form .col-lg-11,
+form .col-lg-12,
+form .col-lg-2,
+form .col-lg-3,
+form .col-lg-4,
+form .col-lg-5,
+form .col-lg-6,
+form .col-lg-7,
+form .col-lg-8,
+form .col-lg-9,
+form .col-md-1,
+form .col-md-10,
+form .col-md-11,
+form .col-md-12,
+form .col-md-2,
+form .col-md-3,
+form .col-md-4,
+form .col-md-5,
+form .col-md-6,
+form .col-md-7,
+form .col-md-8,
+form .col-md-9,
+form .col-sm-1,
+form .col-sm-10,
+form .col-sm-11,
+form .col-sm-12,
+form .col-sm-2,
+form .col-sm-3,
+form .col-sm-4,
+form .col-sm-5,
+form .col-sm-6,
+form .col-sm-7,
+form .col-sm-8,
+form .col-sm-9,
+form .col-xs-1,
+form .col-xs-10,
+form .col-xs-11,
+form .col-xs-12,
+form .col-xs-2,
+form .col-xs-3,
+form .col-xs-4,
+form .col-xs-5,
+form .col-xs-6,
+form .col-xs-7,
+form .col-xs-8,
+form .col-xs-9 {
+  margin-bottom: 15px;
+}
+@font-face {
+  font-family: 'Franklin Gothic Medium Cond';
+  font-style: normal;
+  font-weight: normal;
+  src: local('../font/Franklin Gothic Medium Cond'), url('../font/Franklin Gothic Medium Cond Regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'swis721_ltcn_btlight';
+  src: url('../font/swisscl-webfont.eot');
+  src: url('../font/swisscl-webfont.eot?#iefix') format('embedded-opentype'), url('../font/swisscl-webfont.woff2') format('woff2'), url('../font/swisscl-webfont.woff') format('woff'), url('../font/swisscl-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'montserrat-bold';
+  src: url('../font/montserrat-bold.ttf');
+}
+@font-face {
+  font-family: 'montserrat-regular';
+  src: url('../font/montserrat-regular.ttf');
+}
+@font-face {
+  font-family: 'montserrat-semibold';
+  src: url('../font/montserrat-semibold.ttf');
+}
+@font-face {
+  font-family: 'montserrat-semibolditalic';
+  src: url('../font/montserrat-semibolditalic.ttf');
+}
+@font-face {
+  font-family: 'montserrat-medium';
+  src: url('../font/montserrat-medium.ttf');
+}
+@font-face {
+  font-family: 'montserrat-light';
+  src: url('../font/montserrat-regular.ttf');
+}
+@font-face {
+  font-family: 'montserrat-thin';
+  src: url('../font/montserrat-regular.ttf');
+}
+@font-face {
+  font-family: 'proxima-nova';
+  src: url('../font/proxima-nova-regular.otf');
+}
+@font-face {
+  font-family: 'proxima-nova-bold';
+  src: url('../font/proxima-nova-bold.otf');
+}
+@font-face {
+  font-family: 'proxima-nova-medium';
+  src: url('../font/proxima-nova-medium.otf');
+}
+@font-face {
+  font-family: 'URWDINCond-Regular';
+  src: url('../font/URWDINCond-Regular.otf');
+}
+@font-face {
+  font-family: 'URWDINCond-Demi';
+  src: url('../font/URWDINCond-Demi.ttf');
+}
+@font-face {
+  font-family: 'URWDINCond-Bold';
+  src: url('../font/URWDINCond-Bold.ttf');
+}
+@font-face {
+  font-family: 'Roboto-Thin';
+  src: url('../font/Roboto-Thin.ttf');
+}
+@font-face {
+  font-family: 'Roboto-Thin-Italic';
+  src: url('../font/Roboto-ThinItalic.ttf');
+}
+@font-face {
+  font-family: 'Roboto-Regular';
+  src: url('../font/Roboto-Regular.ttf');
+}
+@font-face {
+  font-family: 'Roboto-Medium-Italic';
+  src: url('../font/Roboto-MediumItalic.ttf');
+}
+@font-face {
+  font-family: 'Roboto-Medium';
+  src: url('../font/Roboto-Medium.ttf');
+}
+@font-face {
+  font-family: 'Roboto-Light-Italic';
+  src: url('../font/Roboto-LightItalic.ttf');
+}
+@font-face {
+  font-family: 'Roboto-Light';
+  src: url('../font/Roboto-Light.ttf');
+}
+@font-face {
+  font-family: 'Roboto-Italic';
+  src: url('../font/Roboto-Italic.ttf');
+}
+@font-face {
+  font-family: 'Roboto-Bold-Italic';
+  src: url('../font/Roboto-BoldItalic.ttf');
+}
+@font-face {
+  font-family: 'Roboto-Bold';
+  src: url('../font/Roboto-Bold.ttf');
+}
+@font-face {
+  font-family: 'Roboto-Condensed-Regular';
+  src: url('../font/RobotoCondensed-Regular.ttf');
+}
+@font-face {
+  font-family: 'Roboto-Condensed-Light';
+  src: url('../font/RobotoCondensed-Light.ttf');
+}
+@font-face {
+  font-family: 'Roboto-Condensed-Light-italic';
+  src: url('../font/RobotoCondensed-LightItalic.ttf');
+}
+@font-face {
+  font-family: 'Roboto-Condensed-Italic';
+  src: url('../font/RobotoCondensed-Italic.ttf');
+}
+@font-face {
+  font-family: 'Roboto-Condensed-Bold';
+  src: url('../font/RobotoCondensed-Bold.ttf');
+}
+@font-face {
+  font-family: 'Roboto-Condensed-Bold-Italic';
+  src: url('../font/RobotoCondensed-BoldItalic.ttf');
+}
+@font-face {
+  font-family: 'JosefinSans-Bold';
+  src: url('../font/JosefinSans-Bold.ttf');
+}
+@font-face {
+  font-family: 'JosefinSans-BoldItalic';
+  src: url('../font/JosefinSans-BoldItalic.ttf');
+}
+@font-face {
+  font-family: 'JosefinSans-ExtraLight';
+  src: url('../font/JosefinSans-ExtraLight.ttf');
+}
+@font-face {
+  font-family: 'JosefinSans-ExtraLightItalic';
+  src: url('../font/JosefinSans-ExtraLightItalic.ttf');
+}
+@font-face {
+  font-family: 'JosefinSans-Italic';
+  src: url('../font/JosefinSans-Italic.ttf');
+}
+@font-face {
+  font-family: 'JosefinSans-Light';
+  src: url('../font/JosefinSans-Light.ttf');
+}
+@font-face {
+  font-family: 'JosefinSans-LightItalic';
+  src: url('../font/JosefinSans-LightItalic.ttf');
+}
+@font-face {
+  font-family: 'JosefinSans-Medium';
+  src: url('../font/JosefinSans-Medium.ttf');
+}
+@font-face {
+  font-family: 'JosefinSans-MediumItalic';
+  src: url('../font/JosefinSans-MediumItalic.ttf');
+}
+@font-face {
+  font-family: 'JosefinSans-Regular';
+  src: url('../font/JosefinSans-Regular.ttf');
+}
+@font-face {
+  font-family: 'JosefinSans-SemiBold';
+  src: url('../font/JosefinSans-SemiBold.ttf');
+}
+@font-face {
+  font-family: 'JosefinSans-SemiBoldItalic.ttf';
+  src: url('../font/JosefinSans-SemiBoldItalic.ttf');
+}
+@font-face {
+  font-family: 'JosefinSans-Thin';
+  src: url('../font/JosefinSans-Thin.ttf');
+}
+@font-face {
+  font-family: 'JosefinSans-ThinItalic';
+  src: url('../font/JosefinSans-ThinItalic.ttf');
+}

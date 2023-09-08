@@ -1,0 +1,85 @@
+@main_color: #cd1827;
+@blue-clear: rgba(59, 170, 255, 0.31);
+@blue: #072F57;
+@red: #E10000;
+@green: #37ba75;
+@gray: #555;
+@white: #ffffff;
+
+//perdiz
+@pMainColor: #262b3e;
+@pHover: #daa520;
+@pWhite: #ffffff;
+@pGray: #555;
+
+// SITE PLANO
+
+@siteColor1: #150D26;
+@siteColor2:#302841;
+@siteColor3: #635E6D;
+@siteColor4: #C2BBD0;
+@siteColor5: #D9D5E2;
+@siteColor6: #F9F7FC;
+@siteColor7: #EAEAEA;
+
+@elRed1: #E10000;
+@elRed2: #A60000;
+@elRed3: #fbd9d9;
+
+@menu: white;
+@menuOver: #daa520;
+@menuActive: #daa520;
+
+@redMain: #ff2c32;
+//@redMain: #d72d32;
+@blueMain: #2a3355;
+@grayMain: #edeff1;
+@greenMain: #00a58b;
+@greenButton: #1aa38b;
+@darkgrayMain: #454950;
+
+
+/* Funções */
+
+.border-radius(@radius) {
+  border-radius: @radius;
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+}
+
+.border-radius-top-left(@radius) {
+  border-top-left-radius: @radius;
+  -moz-border-radius-topleft: @radius;
+  -webkit-border-top-left-radius: @radius;
+}
+
+.border-radius-top-right(@radius) {
+  border-top-right-radius: @radius;
+  -moz-border-radius-topright: @radius;
+  -webkit-border-top-right-radius: @radius;
+}
+
+.border-radius-bottom-left(@radius) {
+  border-bottom-left-radius: @radius;
+  -moz-border-radius-bottomleft: @radius;
+  -webkit-border-bottom-left-radius: @radius;
+}
+
+.border-radius-bottom-right(@radius) {
+  border-bottom-right-radius: @radius;
+  -moz-border-radius-bottomright: @radius;
+  -webkit-border-bottom-right-radius: @radius;
+}
+
+.box-shadow(@inset, @hoff, @voff, @blur, @color) {
+  -webkit-box-shadow: @inset @hoff @voff @blur @color;
+  -moz-box-shadow: @inset @hoff @voff @blur @color;
+  box-shadow: @inset @hoff @voff @blur @color;
+}
+
+.transition(@element, @time, @effect) {
+  -webkit-transition: @element @time @effect;
+  -moz-transition: @element @time @effect;
+  -o-transition: @element @time @effect;
+  transition: @element @time @effect;
+}

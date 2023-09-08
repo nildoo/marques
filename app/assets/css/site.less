@@ -1,0 +1,1163 @@
+@import "font.css";
+@import "definitions.less";
+@import "base.less";
+
+a {
+  color: #fff;
+  font-family: 'proxima-nova', sans-serif;
+
+  &:hover,
+  &:visited {
+    color: #fff;
+    text-decoration: underline;
+  }
+}
+
+.navbar-default,
+.navbar {
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  padding: 10px 0;
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+  background: rgb(51 51 51 / 0%);
+  border: none;
+  border-top: solid #fdeec2 0px;
+  border-bottom: solid #fff 0px;
+
+  .navbar-brand {
+    float: left;
+    height: auto;
+    margin-left: 0 !important;
+    padding: 10px 0;
+  }
+
+  .navbar-nav>li>a {
+    color: white;
+    font-size: 15px;
+    margin: 0;
+    text-transform: uppercase;
+    font-family: 'proxima-nova', sans-serif;
+
+    &:hover {
+      color: @redMain;
+      font-weight: 600;
+    }
+  }
+
+  .nav>li>a {
+    position: relative;
+    display: block;
+    line-height: 60px;
+  }
+
+}
+
+.navbar-default .navbar-nav>.active>a {
+  color: white;
+  font-weight: 600;
+  background-color: transparent;
+
+  &:hover {
+    background-color: transparent;
+    color: @redMain;
+  }
+}
+
+
+.shadow{
+  box-shadow: 0px -3px 14px 0px;
+}
+
+.content {
+  overflow: hidden;
+  // margin-top: 70px;
+}
+
+.bg-gray {
+  background: @grayMain;
+}
+.bg-blue{
+  background: @blueMain;
+}
+.bg-grayDark{
+  background: #505258;
+}
+
+.section-padding {
+  padding: 80px 0;
+  h1{
+    margin-bottom: 40px;
+  }
+}
+.mrgTop-120{
+  margin-top: 120px;
+}
+.pd-100{
+  padding: 100px 0;
+}
+.pd-80{
+  padding: 80px 0;
+}
+.pd-50{
+  padding: 50px 0;
+}
+//inital page
+
+//intro initial
+.intro{
+  padding: 80px 0;
+  .title-home{
+    color: @redMain;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'URWDINCond-Demi', sans-serif;
+    h1{
+      font-weight: 700;
+      span{
+        display: block;
+      }
+    }
+  }
+  p{
+    font-size: 23px;
+    text-align: center;
+    padding: 40px 120px;
+    font-family: 'proxima-nova', sans-serif;
+  }
+}
+//intro end
+
+//about-us
+
+.about-us{
+  font-family: 'proxima-nova', sans-serif;
+  .area-about{
+    .title-about{
+      h1{
+        font-size: 48px;
+        font-family: 'URWDINCond-Demi', sans-serif;
+        text-transform: uppercase;
+        color: @redMain;
+        margin-bottom: 20px;
+        span{
+          display: block;
+        }
+      }
+      p{
+        width: 70%;
+        text-align: left;
+        font-size: 18px;
+        margin-bottom: 25px;
+      }
+    }
+    .aboutValue{
+      border-left: solid @redMain 2px;
+      padding-left: 35px;
+      h1{
+        color: @blueMain;
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 18px;
+        font-weight: bold;
+      }
+      p{
+        margin-bottom: 25px;
+      }
+
+    }
+  }
+  .picture{
+    position: absolute;
+    top: -40px;
+    right: -95px;
+    img{
+      height: 600px;
+    }
+  }
+
+  .mission{
+    border-left: solid @redMain 2px;
+    padding-left: 35px;
+    margin-top: 40px;
+    padding-right: 40px;
+    h1{
+      color: @blueMain;
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 18px;
+      font-weight: bold;
+    }
+  }
+  .vision{
+    border-left: solid @redMain 2px;
+    padding-left: 35px;
+    margin-top: 40px;
+    padding-right: 180px;
+    h1{
+      color: @blueMain;
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 18px;
+      font-weight: bold;
+    }
+  }
+}
+.newContact{
+  text-align: center;
+  .titleForm{
+    margin-bottom: 45px;
+    h1, h2{
+      font-family: 'URWDINCond-Regular', sans-serif;
+      color: white;
+      font-size: 26px;
+      span{
+        display: block;
+      }
+    }
+  }
+  .pd-line-100{
+    padding: 0 100px;
+  }
+  .whatsapp{
+    text-align: center;
+    li{
+      display: inline-block;
+      padding: 0 10px;
+      line-height: 66px;
+      h1{
+        color: white;
+        font-size: 18px;
+        span{
+          color: #00C3A2;
+          font-family: 'proxima-nova-bold', sans-serif;
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}
+
+//about-us end
+
+
+//service initial
+.service-In{
+  color: white;
+  .title{
+    text-align: center;
+    padding-bottom: 60px;
+    h1{
+      font-family: 'URWDINCond-Demi', sans-serif;
+      display: initial;
+      padding: 12px 20px;
+      border: solid white 2px;
+      font-size: 32px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: white;
+      position: relative;
+      z-index: 100;
+      background: @blueMain;
+    }
+    &:before{
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 0.5em;
+      border-top: 1px solid white;
+      z-index: 99;
+      width: 50%;
+      margin: 15px auto;
+    }
+  }
+  .servico{
+    padding: 0 340px;
+    .items{
+      list-style: none;
+      li{
+        display: block;
+        padding: 4px 0;
+        font-family: 'proxima-nova', sans-serif;
+        border-bottom: solid white 1px;
+        font-size: 23px;
+        text-transform: uppercase;
+        span{
+          display: block;
+        }
+        &:last-child{
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}
+//service end
+
+//quality initial
+.qualy{
+  background: url('../img/qualy.jpg') center center no-repeat;
+  background-size: cover;
+  padding: 104px 0;
+  .description{
+    color: @blueMain;
+    padding: 0 100px;
+    font-family: 'proxima-nova', sans-serif;
+    font-size: 26px;
+    strong{
+      font-family: 'proxima-nova-bold', sans-serif;
+    }
+    span{
+      display: block;
+      padding: 0 30px;
+    }
+    p{
+      margin: auto;
+      text-align: inherit;
+      font-size: inherit;
+    }
+  }
+}
+//quality end
+
+//center contact initial
+.center-contact{
+  display: flex;
+  .side-left{
+    width: 50%;
+    height: 400px;
+    background: @redMain;
+    .content{
+      padding: 50px 210px 0;
+      h1{
+        color: white;
+        text-transform: uppercase;
+        font-size: 38px;
+        font-family: 'URWDINCond-Regular', sans-serif;
+        margin-bottom: 0;
+        span{
+          font-family: 'URWDINCond-Demi', sans-serif;
+          display: block;
+        }
+        p{
+          margin: auto;
+          text-align: inherit;
+          font-size: inherit;
+        }
+      }
+      h2{
+        color: white;
+        text-transform: uppercase;
+        font-size: 46px;
+        font-family: 'URWDINCond-Bold', sans-serif;
+      }
+      .areaBotton{
+        padding-top: 15px;
+        button{
+          text-transform: uppercase;
+          font-family: 'proxima-nova-medium', sans-serif;
+        }
+      }
+    }
+  }
+  .side-right{
+    width: 50%;
+    background: url('../img/contact-home.jpg') 0 center no-repeat;
+    background-size: cover;
+  }
+  .side-rightClient{
+    width: 50%;
+    background: url('../img/client.jpg') 0 center no-repeat;
+    background-size: cover;
+  }
+}
+//center contact end
+
+//client initial
+.client{
+  text-align: center;
+  h1{
+    text-transform: uppercase;
+    font-size: 42px;
+    font-family: 'URWDINCond-Demi', sans-serif;
+    color: @blueMain;
+    margin-bottom: 40px;
+  }
+  ul{
+    list-style: none;
+    li{
+      display: inline-block;
+      margin: 0 40px;
+      i{
+        font-size: 100px;
+        color: #bbb;
+      }
+    }
+  }
+  .description{
+    padding: 40px 140px 0;
+    font-size: 24px;
+    font-family: 'proxima-nova-regular', sans-serif;
+    color: #1d1d1d;
+  }
+  .item{
+    padding-top: 40px;
+    h1{
+      font-family: 'proxima-nova-bold', sans-serif;
+      color: @redMain;
+      font-size: 32px;
+      margin-bottom: 0;
+      span{
+        display: block;
+      }
+    }
+  }
+}
+//client end
+
+//minContact initial
+.minContact{
+  .minBoxLeft{
+    padding-left: 120px;
+  }
+  .minBoxRight{
+    padding-right: 120px;
+    button{
+      width: 155px;
+    }
+  }
+  h1{
+    color: white;
+    font-size: 60px;
+    font-family: 'URWDINCond-Demi', sans-serif;
+    text-transform: uppercase;
+  }
+  h3{
+    margin-top: 22px;
+    color: white;
+    font-family: 'proxima-nova-regular', sans-serif;
+    font-size: 22px;
+    text-align: right;
+    span{
+      display: block;
+      b{
+        color: @greenMain;
+        font-family: 'proxima-nova-ExtraB', sans-serif;
+        font-size: 28px;
+      }
+    }
+  }
+  .content{
+    padding-top: 17px;
+    padding-right: 48px;
+    font-family: 'proxima-nova-regular', sans-serif;
+    color: white;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+    span{
+      display: block;
+      text-align: justify;
+    }
+  }
+  .initai-talk{
+    margin-top: 24px;
+    background: url('../img/botao_iniciar_conversa.png') no-repeat center center;
+    background-size: contain;
+    padding: 40px;
+  }
+}
+//minContact end
+
+
+//blog
+.sale-blog{
+  font-family: 'Poppins', serif;
+  .title{
+    h1 {
+      font-family: 'Playfair Display', serif;
+      color: @elRed2;
+      font-size: 24px;
+      display: grid;
+      line-height: 36px;
+      span {
+        font-family: 'Poppins', serif;
+        color: @siteColor2;
+        font-size: 36px;
+        font-weight: 600;
+      }
+    }
+  }
+  .blog{
+    position: relative;
+    margin-bottom: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    .blogThumb {
+      position:relative;
+      img {
+        width: 100%;
+      }
+      &::before {
+        position:absolute;
+        left:0; 
+        width:100%;
+        height:100%;
+        background:rgb(73 73 90 / 82%);
+        top:0; 
+        content:"";
+        opacity:0;
+        transition:.5s;
+      }
+  
+    }
+    .date{
+      margin-top: 12px;
+      font-weight: 600;
+      color: @siteColor2;
+     }
+    h1{
+      color: @siteColor2;
+      font-size: 24px;
+      font-weight: 600;
+      margin: 5px 0;
+      line-height: 32px;
+    }
+    p{
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 24px;
+      color: @siteColor2;
+    }
+    &:hover{
+      h1{
+        color: @elRed1;
+        font-size: 24px;
+        font-weight: 600;
+      }
+    }
+  }
+  
+
+
+  .blog:hover .blogThumb:before{
+    opacity:1;
+  }
+  
+  .screenHover {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    text-align: center;
+    transform: translateY(-50%);
+    opacity:0;
+    transition:.5s;
+  }
+  .blog:hover .screenHover {
+    opacity: 1;
+  }
+  .bt-see-more{
+    margin-top: 40px;
+    a{
+      button{
+        padding: 18px 30px;
+        text-transform: uppercase;
+        font-size: 15px;
+      }
+    }
+  }
+}
+//sale blog end
+
+//sevice
+.service{
+  font-family: 'proxima-nova', sans-serif;
+  p{
+    padding: 0 210px;
+    text-align: center;
+    font-size: 25px;
+    &:nth-child(2){
+      margin-bottom: 40px;
+    }
+  }
+  hr{
+    margin: 0 auto;
+    width: 50%;
+    border: solid 2px @blueMain;
+  }
+  .contentService{
+    padding-top: 45px;
+    h1{
+      font-family: 'proxima-nova-bold', sans-serif;
+      color: @redMain;
+      font-size: 22px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      span{
+        display: block;
+      }
+    }
+    .description{
+      font-size: 22px;
+    }
+  }
+  .chapp{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    .picture{
+      background: url('../img/chapas.png') center center no-repeat;
+      background-size: contain;
+      padding: 94px;
+    }
+  }
+}
+.portifolio{
+  h1{
+    font-family: 'URWDINCond-Bold', sans-serif;
+    color: @blueMain;
+    text-transform: uppercase;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .panel, .panel-defaul{
+    padding: 0;
+    border-color: transparent;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    .panel-body{
+      text-align: center;
+      padding: 10px;
+    }
+    .panel-footer{
+      padding: 0;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      h1{
+        font-size: 20px;
+      }
+    }
+  }
+}
+//sevice end
+
+//clients
+.clients{
+  h1{
+    font-family: 'URWDINCond-Bold', sans-serif;
+    color: @blueMain;
+    text-transform: uppercase;
+    font-size: 42px;
+    text-align: center;
+  }
+}
+//clients end
+
+//FALE CONOSCO
+.contact-us {
+  background: #ffffff;
+  padding: 40px 40px 12px 40px;
+  box-shadow: 0px 0px 40px 0px rgb(0 0 0 / 10%);
+
+  textarea.form-control {
+    height: auto;
+    border: solid 1px #ccc;
+  }
+}
+
+.location-us {
+  background: @pMainColor;
+  padding: 60px 40px 58px 40px;
+
+  .box-location {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.58);
+    margin-bottom: 20px;
+    display: -webkit-flex;
+    display: flex;
+
+    .content-icon {
+      float: left;
+
+      i {
+        color: #ffffff;
+        background-color: @redMain;
+        font-size: 28px;
+        height: 60px;
+        width: 60px;
+        line-height: 60px;
+        border-radius: 5px 5px 5px 5px;
+        margin-top: 10px;
+        text-align: center;
+      }
+    }
+
+    .box-right {
+      padding-left: 25px;
+
+      .content-title {
+        color: #ffffff;
+        font-weight: 500;
+        text-transform: capitalize;
+        margin-bottom: 10px;
+      }
+
+      .content-desc {
+        color: rgba(255, 255, 255, 0.74);
+        font-weight: 400;
+        margin-bottom: 25px;
+        padding: 0;
+      }
+    }
+  }
+}
+
+//FALE CONOSCO FIM
+
+.scrollup_fade {
+  background: @redMain;
+  opacity: 0.8;
+  height: 45px;
+  width: 45px;
+  right: 0;
+  line-height: 45px;
+  border-radius: 5px 0 0 5px;
+  position: fixed;
+  bottom: 78px;
+  display: none;
+  -webkit-transition: .150s;
+  transition: .150s;
+  z-index: 99999;
+  text-align: center;
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+//BLOGSPOT end
+
+.navegation-page{
+  background-color: #3a3d45;
+  h1{
+    text-align: center;
+    color: white;
+    font-family: 'URWDINCond-Demi', sans-serif;
+    text-transform: uppercase;
+    font-size: 60px;
+  }
+  h2{
+    text-align: left;
+    color: white;
+    font-family: 'URWDINCond-Demi', sans-serif;
+    text-transform: uppercase;
+    font-size: 60px;
+    margin-left: 75px;
+    span{
+      display: block;
+    }
+  }
+}
+
+
+.contact {
+  font-family: 'Playfair Display', serif;
+  .marker {
+    //background: white;
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 28px;
+
+    span {
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 14px;
+      line-height: 24px;
+    }
+  }
+}
+
+
+footer {
+  font-family: 'proxima-nova', sans-serif;
+  .logo-white{
+    padding-bottom: 30px;
+  }
+  .menu-footer{
+    text-align: left;
+    padding-left: 40px;
+    border-left: solid #fff 2px;
+    margin-left: 10px;
+    a{
+      font-size: 13px;
+      color: white;
+      text-transform: normal;
+      line-height: 24px;
+      &:hover{
+        color: @redMain;
+      }
+    }
+  }
+  .address{
+    text-align: left;
+    padding-left: 40px;
+    border-left: solid #fff 2px;
+    li{
+      font-size: 15px;
+      color: white;
+      line-height: 24px;
+      font-family: 'proxima-nova', sans-serif;
+    }
+  }
+  .socialMdedia{
+    text-align: left;
+    padding-left: 40px;
+    border-left: solid #fff 2px;
+      h2{
+        color: white;
+        font-family: 'URWDINCond-Demi', sans-serif;
+        margin-bottom: 20px;
+        span{
+          display: block;
+        }
+      }
+      h3{
+        color: white;
+        font-family: 'proxima-nova', sans-serif;
+        font-size: 13px;
+        margin: 10px 0;
+      }
+    li{
+      display: inline-block;
+        a{
+
+          .fa-inverse {
+            color: @blueMain;
+          &:hover{
+            color: @redMain;
+          }
+        }
+      }
+    }
+  }
+}
+
+.copyright {
+  background-color: #ffffff;
+  padding: 20px 0;
+  border-top: solid 0 #cdcdcd;
+  font-family: 'Franklin Gothic Medium Cond', sans-serif;
+
+  h1 {
+    text-align: center;
+    font-size: 15px;
+    text-transform: uppercase;
+
+    a {
+      color: #333333;
+    }
+
+    i {
+      color: #333333;
+    }
+  }
+
+  p {
+    font-size: 15px;
+    margin: 0 0 0;
+
+    a {
+      font-family: 'Franklin Gothic Medium Cond', sans-serif;
+      color: @redMain;
+      font-weight: 500;
+      &:hover {
+        color: @blueMain;
+      }
+    }
+  }
+}
+
+.form-control,
+input,
+textarea {
+  font-family: 'proxima-nova', sans-serif;
+  box-shadow: none;
+  resize: none;
+  background: #edeef0;
+  color: #555;
+}
+
+input[placeholder],
+[placeholder],
+*[placeholder] {
+  color: #000;
+}
+
+@media only screen and (max-width: 767px) {
+
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    .fa {
+      font-size: 25px;
+      color: white;
+    }
+  }
+
+  .navbar-default .navbar-nav>li>a {
+    font-size: 16px;
+    margin: 0;
+    color: black;
+  }
+  .navbar-default .nav > li > a, .navbar .nav > li > a{
+    padding: 10px;
+    line-height: 10px;
+  }
+  .navbar-default .navbar-nav > li > a {
+    font-size: 14px;
+    margin: 0;
+    color: white;
+  }
+
+  .navbar-collapse{
+    position: absolute;
+    top: 104px;
+    background: @redMain;
+    width: 100%;
+    z-index: 9999;
+  }
+
+  .fill {
+    height: 320px;
+  }
+
+  .content {
+    top: 164px;
+  }
+
+  .sobre {
+    padding: 0 15px;
+
+    .col-md-6 {
+      padding: 20px 0;
+      border-bottom: solid #dddddd 1px;
+
+      &:last-child {
+        border-bottom: solid #dddddd 0;
+      }
+    }
+  }
+
+}
+
+@media only screen and (max-width: 425px) {
+
+  .navbar-fixed-bottom .navbar-collapse,
+  .navbar-fixed-top .navbar-collapse {
+    background: #f9eac0;
+    max-height: none;
+  }
+
+  .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: transparent;
+}
+
+  .navbar-default .navbar-nav>li>a,
+  .navbar .navbar-nav>li>a {
+    margin-top: 10px;
+  }
+
+  .sale-enterprise .flex{
+    display: block;
+    .siderL{
+      width: 100%;
+    }
+  }
+
+  .header-developements .call-fixed{
+    display: none;
+  }
+
+  .navbar-nav .open .dropdown-menu{
+    background: white;
+    li{
+      border-bottom: solid #f4f4f4 1px;
+      padding: 8px 0;
+    }
+  }
+
+  .enterprise .title h1 span{
+    font-size: 28px;
+  }
+
+  .about .min-title {
+    padding: 0;
+    display: flex;
+    align-items: normal;
+    height: 52px;
+    justify-content: end;
+  }
+  iframe {
+    width: 100%!important;
+  }
+  .call-about{
+    p{
+      padding: 15px;
+    }
+  }
+  .address{
+    padding: 0;
+  }
+
+  .intro p{
+    padding: 40px 10px;;
+  }
+  .service-In .servico {
+    padding: 0 10px;
+    .items li {
+      display: block;
+      padding: 4px 0;
+      font-family: 'proxima-nova', sans-serif;
+      border-bottom: solid white 1px;
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+  }
+
+  .qualy .description {
+    color: #2a3355;
+    padding: 0;
+    font-family: 'proxima-nova', sans-serif;
+    font-size: 18px;
+  }
+
+  .center-contact {
+    display: block;
+  }
+  .center-contact .side-left {
+    width: 100%;
+    height: auto;
+    background: #ff2c32;
+  }
+  .center-contact .side-right {
+    width: 100%;
+    background: url(../img/contact-home.jpg) 0 center no-repeat;
+    background-size: cover;
+    padding: 120px;
+  }
+  .center-contact .side-left .content {
+    padding: 20px;
+  }
+  .client .description {
+    padding: 20px 0;
+    font-size: 20px;
+    font-family: 'proxima-nova-regular', sans-serif;
+    color: #1d1d1d;
+  }
+  .minContact .minBoxLeft {
+    padding-left: 0;
+  }
+  .minContact .content {
+    padding-top: 17px;
+    padding-right: 0;
+    font-family: 'proxima-nova-regular', sans-serif;
+    color: white;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+  }
+  .minContact .minBoxRight {
+    padding-right: 0;
+  }
+  .minContact h3 {
+    margin-top: 22px;
+    color: white;
+    font-family: 'proxima-nova-regular', sans-serif;
+    font-size: 22px;
+    text-align: center;
+  }
+
+  footer .menu-footer {
+    text-align: left;
+    padding-left: 40px;
+    border-left: solid #fff 2px;
+    margin-left: 0;
+  }
+
+  footer .bottom{
+    display: block;
+    padding: 4px 0;
+  }
+
+  footer h2{
+    font-size: 9px;
+  }
+  footer .bottom h3{
+    margin-bottom: 10px;
+  }
+  footer .bottom h3 span{
+    font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .mini ul li {
+    height: 92px;
+    width: 92px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+
+  .navbar-toggle {
+    position: relative;
+    float: right;
+    padding: 0;
+    margin-top: 8px;
+    margin-right: 12px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+  footer h1{
+    font-size: 11px;
+  }
+  footer h2{
+    font-size: 6px;
+  }
+
+  footer .bottom h3 span {
+    font-size: 6px;
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #c8c8c8;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
