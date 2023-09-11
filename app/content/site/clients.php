@@ -15,14 +15,18 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <ul>
-                    <li><i class="fab fa-apple"></i></li>
-                    <li><i class="fab fa-apple"></i></li>
-                    <li><i class="fab fa-apple"></i></li>
-                    <li><i class="fab fa-apple"></i></li>
-                    <li><i class="fab fa-apple"></i></li>
-                    <li><i class="fab fa-apple"></i></li>
-                    <li><i class="fab fa-apple"></i></li>
+                <ul class="">
+                    <?php
+                    $Db->setParams([
+                        'table' => 'client',
+                        'order' => 'name ASC'
+                    ]);
+                    $clients = $Db->result();
+                    foreach ($clients as $client) { ?>
+                        <li>
+                            <img src="<?= IMG . 'service/' . $client->img ?>" alt="<?= $client->name ?>" />
+                        </li>
+                    <?php } ?>
                 </ul>
             </div>
             <div class="col-sm-12">
@@ -42,11 +46,11 @@
 </section>
 
 <section class="center-contact">
-    <div class="side-left" style="height:336px">
+    <div class="side-left">
         <div class="content">
             <h2>Confira algns de nossos projetos</h2>
             <div class="areaBotton">
-            <a href="services"><button class="btn btn-trans">Ver projetos</button></a>
+                <a href="services"><button class="btn btn-trans">Ver projetos</button></a>
             </div>
         </div>
     </div>

@@ -776,7 +776,7 @@ a:visited {
 }
 .center-contact .side-left {
   width: 50%;
-  height: 400px;
+  min-height: 400px;
   background: #ff2c32;
 }
 .center-contact .side-left .content {
@@ -833,14 +833,14 @@ a:visited {
 }
 .client ul {
   list-style: none;
+  padding: 20px 0;
 }
 .client ul li {
   display: inline-block;
-  margin: 0 40px;
+  margin: 0 16px;
 }
-.client ul li i {
-  font-size: 100px;
-  color: #bbb;
+.client ul li img {
+  height: 90px;
 }
 .client .description {
   padding: 40px 140px 0;
@@ -1177,6 +1177,61 @@ a:visited {
   font-size: 14px;
   line-height: 24px;
 }
+.contact-new h1 {
+  font-family: 'proxima-nova-bold', sans-serif;
+  color: #2a3355;
+  font-size: 42px;
+  padding: 0 68px;
+}
+.contact-new .content-desc {
+  padding: 0 68px;
+  font-family: 'proxima-nova', sans-serif;
+  font-size: 16px;
+}
+.contact-new .content-desc p {
+  margin-bottom: 20px;
+}
+.contact-new .content-desc .phone {
+  font-weight: bold;
+}
+.contact-new .content-desc .wpp {
+  font-family: 'proxima-nova', sans-serif;
+}
+.contact-new .content-desc .wpp h2 {
+  color: #072F57;
+  font-size: 28px;
+}
+.contact-new .content-desc .wpp h2 span {
+  display: block;
+}
+.contact-new .content-desc .wpp h2 span strong {
+  font-family: 'proxima-nova-bold', sans-serif;
+  color: #00a58b;
+  font-size: 32px;
+}
+.contact-new .content-desc .wpp p {
+  margin: 15px 0;
+}
+.contact-new .content-desc .wpp p img {
+  height: 51px;
+}
+.contact-new .form-control,
+.contact-new input,
+.contact-new textarea {
+  font-family: 'proxima-nova', sans-serif;
+  box-shadow: none;
+  resize: none;
+  background: #fff;
+  color: #555;
+}
+.contact-new input[placeholder],
+.contact-new [placeholder],
+.contact-new *[placeholder] {
+  color: #000;
+}
+.contact-new button {
+  width: 180px;
+}
 footer {
   font-family: 'proxima-nova', sans-serif;
 }
@@ -1281,6 +1336,10 @@ input[placeholder],
   color: #000;
 }
 @media only screen and (max-width: 767px) {
+  .navbar-default,
+  .navbar {
+    background: rgba(0, 0, 0, 0.5);
+  }
   .navbar-default .navbar-toggle {
     border-color: transparent;
   }
@@ -1308,7 +1367,7 @@ input[placeholder],
   }
   .navbar-collapse {
     position: absolute;
-    top: 104px;
+    top: 83px;
     background: #ff2c32;
     width: 100%;
     z-index: 9999;
@@ -1344,6 +1403,11 @@ input[placeholder],
   .navbar .navbar-nav > li > a {
     margin-top: 10px;
   }
+  .navbar-brand > img {
+    display: block;
+    height: 42px;
+    margin-left: 10px;
+  }
   .sale-enterprise .flex {
     display: block;
   }
@@ -1359,6 +1423,47 @@ input[placeholder],
   .navbar-nav .open .dropdown-menu li {
     border-bottom: solid #f4f4f4 1px;
     padding: 8px 0;
+  }
+  .navegation-page {
+    padding: 156px 0!important;
+  }
+  .navegation-page h1 {
+    font-size: 28px;
+    margin: 0;
+  }
+  .navegation-page h2 {
+    font-size: 28px;
+    margin: 0;
+  }
+  .about-us .picture {
+    position: relative;
+    right: 0;
+  }
+  .newContact .whatsapp {
+    text-align: center;
+    padding-top: 40px;
+  }
+  .newContact .pd-line-100 {
+    padding: 0;
+  }
+  .about-us .vision {
+    padding-right: 0;
+  }
+  .about-us .vision p {
+    text-align: left;
+  }
+  .about-us .mission {
+    padding-right: 0;
+  }
+  .center-contact .side-left {
+    min-height: auto;
+  }
+  .center-contact .side-rightClient {
+    min-height: 192px;
+    width: 100%;
+  }
+  .service p {
+    padding: 0;
   }
   .enterprise .title h1 span {
     font-size: 28px;
@@ -1442,6 +1547,14 @@ input[placeholder],
     font-family: 'proxima-nova-regular', sans-serif;
     font-size: 22px;
     text-align: center;
+  }
+  .contact-new h1 {
+    padding: 0 0 35px 0;
+    font-size: 28px;
+  }
+  .contact-new .content-desc {
+    padding: 0;
+    margin: 45px 0;
   }
   footer .menu-footer {
     text-align: left;

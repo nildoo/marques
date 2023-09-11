@@ -16,12 +16,12 @@
         <div class="panel panel-default">
             <div class="panel-heading"><i class="fa fa-lock"></i> Permissão</div>
             <div class="panel-body">
-                <label class="label-mark">
+                <label class="label-mark-proximity">
                     <input type="radio" name="permissao[]" id="permissao-1"
                            value="1" <?= ($user->permission == 1 ? "checked" : "") ?> required>
                     <span>Administrador</span>
                 </label>
-                <label class="label-mark">
+                <label class="label-mark-proximity">
                     <input type="radio" name="permissao[]" id="permissao-2"
                            value="2" <?= ($user->permission == 2 ? "checked" : "") ?> required>
                     <span>Consultor</span>

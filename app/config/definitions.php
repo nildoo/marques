@@ -34,7 +34,7 @@ define('MENU_SITE', [
     'about-us'=>'Quem Somos',
     'services'=>'Nossos Serviços',
     'clients'=>'Clientes',
-    'complience'=>'Complience',
+    'compliance'=>'Compliance',
     'contact-us'=>'Fale Conosco'
 ]);
 
@@ -46,23 +46,28 @@ define('MENU_CMS', [
     'banner' => 'Banner',
     'config' => 'Config',
     'quem-somos' => 'Quem Somos',
+    'compliance' => 'Compliance',
     'clientes' => 'Clientes',
     //'atuacao' => 'Atuação',
     //'indice' => 'Indice',
     //'faqs' => 'Faqs',
-    'noticias' => 'Blog',
+    //'noticias' => 'Blog',
     'servicos' => 'Serviços',
+    'projetos' => 'Projetos',
 ]);
 define('ICON_MENU', [
     'painel' => 'fa-desktop',
     'banner' => 'fa-picture-o',
     'config' => 'fa-gear',
     'quem-somos' => 'fa-suitcase',
-    'atuacao' => 'fa-balance-scale',
-    'indice' => 'fa-info-circle',
-    'faqs' => 'fa-question-circle',
-    'noticias' => 'fa-newspaper-o',
+    'compliance' => 'fa-gavel',
+    'clientes' => 'fa-diamond',
+    //'atuacao' => 'fa-balance-scale',
+    //'indice' => 'fa-info-circle',
+    //'noticias' => 'fa-newspaper-o',
+    //'faqs' => 'fa-question-circle',
     'servicos' => 'fa-address-card-o',
+    'projetos' => 'fa-gears',
 ]);
 
 /* Project Definitions */

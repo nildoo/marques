@@ -8,72 +8,73 @@
     </div>
 </section>
 
-<section class="pd-100 bg-gray">
+<section class="pd-100 bg-gray contact-new">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 contact-us">
-                <form class="form-group" role="form" id="form-contato">
-                    <div class="col-md-12">
-                        <h2>Entre em contato.</h2>
-                    </div>
-                    <div class="col-sm-6">
-                        <label for="nome">Nome</label>
-                        <input class="form-control" id="nome" type="text" placeholder="Nome" name="nome" required />
-                    </div>
-                    <div class="col-sm-6">
-                        <label for="email">Email</label>
-                        <input class="form-control" id="email" type="email" placeholder="Email" name="email" required />
-                    </div>
-                    <div class="col-sm-6">
-                        <label for="telefone">Telefone</label>
-                        <input class="form-control" id="telefone" type="text" placeholder="Telefone" name="telefone" required />
-                    </div>
-                    <div class="col-sm-6">
-                        <label for="assunto">Telefone</label>
-                        <input class="form-control" name="assunto" id="assunto" type="text" placeholder="Assunto" />
+            <div class="col-sm-6">
+                <h1>Entre em contato e descubra como podemos contribuir para o sucesso do seu negócio.</h1>
+            </div>
+            <div class="col-md-6">
+                <form id='#form-contact'>
+                    <div class="col-sm-12">
+                        <input class="form-control" name="nome" id="nome" placeholder="Nome*" required />
                     </div>
                     <div class="col-sm-12">
-                        <label for="mensagem">Mensagem</label>
-                        <textarea class="form-control" id="mensagem" name="mensagem" placeholder="Mensagem" id="mensagem" rows="5" required></textarea>
+                        <input class="form-control" name="empresa" id="empresa" placeholder="Empresa*" required />
                     </div>
-                    <div class="col-sm-2">
-                        <button class="btn btn-darkBlue" type="submit">Enviar</button>
+                    <div class="col-sm-6">
+                        <input class="form-control" name="telefone" id="telefone" placeholder="(DDD)+Telefone" required />
                     </div>
-                    <div class="clearfix"></div>
+                    <div class="col-sm-6">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="E-mail" required />
+                    </div>
+                    <div class="col-sm-12">
+                        <textarea class="form-control" name="projeto" id="projeto" cols="30" rows="3" placeholder="Qual o seu projeto?" required></textarea>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="pull-right">
+                            <button class="btn btn-green" type="submit">ENVIAR</button>
+                        </div>
+                    </div>
                 </form>
             </div>
-            <div class="col-md-6 location-us">
-                <div class="box-location">
-                    <div class="content-icon">
-                        <i class="fa fa-globe"></i>
-                    </div>
-                    <div class="box-right">
-                        <div class="content-title">ESCRITÓRIO</div>
-                        <div class="content-desc"><?= $config->address ?><br /><?= $config->district . ', ' . $config->city . ', ' . $config->state ?></div>
-                    </div>
-                </div>
-                <div class="box-location">
-                    <div class="content-icon">
-                        <i class="fa fa-phone"></i>
-                    </div>
-                    <div class="box-right">
-                        <div class="content-title">TELEFONE</div>
-                        <div class="content-desc"><?= $config->whatsapp ?> <br><?= $config->phone ?></div>
-                    </div>
-                </div>
-                <div class="box-location">
-                    <div class="content-icon">
-                        <i class="fa fa-envelope-open"></i>
-                    </div>
-                    <div class="box-right">
-                        <div class="content-title">NOSSO EMAIL</div>
-                        <div class="content-desc">contato@marquesmontagens.com.br <br />site@marquesmontagens.com.br</div>
+
+            <div class="clearfix"></div>
+
+            <br>
+            <br>
+            <br>
+
+            <div class="col-sm-6">
+                <div class="content-desc">
+                    <p>
+                        <?= $config->address ?><br /><?= $config->district . ', <strong>' . $config->city . '</strong> | ' . $config->state . ' | ' . $config->zipcode ?>
+                    </p>
+                    <p>
+                        <div class="phone">
+                            <?= $config->phone ?>
+                        </div>
+                       <div>
+                           contato@marquesmontagens.com.br
+                       </div>
+                    </p>
+                    <div class="wpp">
+                        <h2>Atendemos também <span>pelo <strong>WhatsApp</strong></span></h2>
+                        <p>
+                            <img src="<?= IMG . 'botao_iniciar_conversa 2.png'?>" alt="">
+                        </p>
                     </div>
                 </div>
             </div>
+
+            <div class="col-sm-6">
+                <iframe src=" <?=$config->maps ?>" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>    
+            </div>
+
         </div>
     </div>
 </section>
+
 <script src="<?= COMPONENTS . 'jquery/jquery.mask.min.js' ?>"></script>
 <script>
     $(document).ready(function() {

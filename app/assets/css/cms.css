@@ -114,6 +114,15 @@ textarea {
   background: #fafafa;
   border-radius: 4px;
 }
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn:active:focus,
+.btn:focus {
+  outline: 0;
+  outline-offset: 0;
+}
 .btn {
   color: #ffffff;
   border: none;
@@ -121,8 +130,12 @@ textarea {
   font-size: 16px;
 }
 .btn:hover,
-.btn:focus {
+.btn:focus,
+.btn:focus-visible {
   color: #ffffff;
+  outline: none;
+  outline-offset: 0;
+  outline: -webkit-focus-ring-color auto 0;
 }
 .btn.btn-default {
   color: #000;
@@ -138,10 +151,9 @@ textarea {
   border: solid 1px #fff;
   background: transparent;
   border-radius: 0;
-  padding: 12px 15px;
+  padding: 6px 15px;
 }
-.btn.btn-trans:hover,
-.btn.btn-trans:focus {
+.btn.btn-trans:hover {
   background: #ffffff;
   color: #000;
 }
@@ -164,11 +176,11 @@ textarea {
   background-color: #ae0000;
 }
 .btn.btn-green {
-  background-color: #37ba75;
+  background-color: #1aa38b;
 }
 .btn.btn-green:hover,
 .btn.btn-green:focus {
-  background-color: #2b935c;
+  background-color: #137765;
 }
 .btn.btn-wpp {
   background-color: #25D366;
@@ -227,7 +239,7 @@ input {
   outline: none;
 }
 .form-control:focus {
-  border-color: #daa520;
+  border-color: #ff2c32;
   box-shadow: none;
 }
 form .col-lg-1,
@@ -320,6 +332,34 @@ form .col-xs-9 {
 @font-face {
   font-family: 'montserrat-thin';
   src: url('../font/montserrat-regular.ttf');
+}
+@font-face {
+  font-family: 'proxima-nova';
+  src: url('../font/proxima-nova-regular.otf');
+}
+@font-face {
+  font-family: 'proxima-nova-bold';
+  src: url('../font/proxima-nova-bold.otf');
+}
+@font-face {
+  font-family: 'proxima-nova-ExtraB';
+  src: url('../font/proxima-nova-extra-bold.otf');
+}
+@font-face {
+  font-family: 'proxima-nova-medium';
+  src: url('../font/proxima-nova-medium.otf');
+}
+@font-face {
+  font-family: 'URWDINCond-Regular';
+  src: url('../font/URWDINCond-Regular.otf');
+}
+@font-face {
+  font-family: 'URWDINCond-Demi';
+  src: url('../font/URWDINCond-Demi.ttf');
+}
+@font-face {
+  font-family: 'URWDINCond-Bold';
+  src: url('../font/URWDINCond-Bold.ttf');
 }
 @font-face {
   font-family: 'Roboto-Thin';
@@ -739,8 +779,10 @@ div.dataTables_wrapper div.dataTables_filter {
   padding: 5px;
   cursor: pointer;
 }
-.cms-img img {
-  border: solid #ccc 1px;
+.cms-img i {
+  font-size: 28px;
+  padding: 10px 0;
+  color: #E53935;
 }
 .label-mark-proximity {
   width: 316px;

@@ -205,13 +205,17 @@ $texto =  (explode(" ", $r[0]->title, 2));
         <div class="row">
             <div class="col-sm-12">
                 <ul>
-                    <li><i class="fab fa-apple"></i></li>
-                    <li><i class="fab fa-apple"></i></li>
-                    <li><i class="fab fa-apple"></i></li>
-                    <li><i class="fab fa-apple"></i></li>
-                    <li><i class="fab fa-apple"></i></li>
-                    <li><i class="fab fa-apple"></i></li>
-                    <li><i class="fab fa-apple"></i></li>
+                    <?php 
+                    $Db->setParams([
+                        'table' => 'client',
+                        'order' => 'name ASC'
+                    ]);
+                    $clients = $Db->result();
+                    foreach($clients as $client){?>
+                        <li>
+                            <img src="<?= IMG . 'service/' . $client->img ?>" alt="<?= $client->name?>"/>
+                        </li>
+                    <?php } ?>
                 </ul>
             </div>
             <div class="col-sm-12">

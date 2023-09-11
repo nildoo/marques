@@ -381,6 +381,60 @@ case
 
         break;
 
+//ALTERAR COMPLIANCE
+case 'update-compliance':
+
+        $Db->setParams([
+            'table' => 'compliance',
+            'data' => [
+                'content' => $_POST['conteudo'],
+            ],
+            'condition' => [
+                'id' => 1
+            ]
+        ]);
+
+        $u = $Db->update();
+
+        if ($u !== true) {
+            $response->error = true;
+            $response->msg = "Erro ao alterar textos.";
+        }
+
+    break;
+
+//COMPLIANCE ARCHIVES
+case 'insert-img':
+
+    $files = null;
+    foreach ($_FILES as $files) {
+    }
+
+    $pasta = "../../assets/img/compliance/";
+
+    for ($i = 0; $i < count($files['name']); $i++) {
+
+        $arqType = explode('/', $files['type'][$i]);
+        $arqTemp = $files['tmp_name'][$i];
+        $arqError = $files['error'][$i];
+        $arqName = uniqid() . '.' . $arqType[1];
+
+        move_uploaded_file($arqTemp, $pasta . $arqName);
+
+        $Db->setParams([
+            'table' => 'complia_archive',
+            'data' => [
+                'f_id_compliance' => $_POST['id'],
+                'img' => $arqName,
+            ]
+        ]);
+        //var_dump($_POST);
+
+        $Db->insert();
+    }
+    
+    break;
+
 //CADASTRAR NOTICIA
 
     case 'insert-blog':
@@ -651,6 +705,250 @@ case
         $Db->delete();
 
         break;
+
+
+//CADASTRAR PROJETO
+case 'insert-projeto':
+
+    $pasta = "../../assets/img/service/";
+
+    $fileType = strtolower(substr($_FILES['img']['name'], strrpos($_FILES['img']['name'], '.')));
+    $newFile = uniqid() . $fileType;
+    if ($fileType == '.jpg' || $fileType == '.jpeg' || $fileType == '.png') {
+        move_uploaded_file($_FILES['img']['tmp_name'], $pasta . $newFile);
+    }
+
+    if(!empty($_FILES['img']['name'])){
+
+        $Db->setParams([
+            'table' => 'project',
+            'data' => [
+                'name' => $_POST['titulo'],
+                'img' => $newFile,
+            ]
+        ]);
+    } else {
+
+        $Db->setParams([
+            'table' => 'servicesoffered',
+            'data' => [
+                'name' => $_POST['titulo'],
+            ]
+        ]);
+    }
+    //var_dump();
+
+    if (!$Db->insert()) {
+        $response->error = true;
+        $response->msg = "Aconteceu um erro ao cadastrar Projeto.";
+    }
+
+    break;
+
+
+//ALTERAR PROJETO
+case 'update-projeto':
+
+    if (isset($_FILES['img']['name'])) {
+
+        $fileType = strtolower(substr($_FILES['img']['name'], strrpos($_FILES['img']['name'], '.')));
+        $newFile = uniqid() . $fileType;
+        if ($fileType == '.jpg' || $fileType == '.jpeg' || $fileType == '.png') {
+
+            $Db->setParams([
+                'table' => 'project',
+                'condition' => [
+                    'id' => $_POST['id'],
+                ]
+            ]);
+
+            $r = $Db->result();
+            //var_dump($r);
+
+            @unlink('../../assets/img/service/' . $r[0]->img);
+
+            if (!$Db->update()) {
+                $response->error = true;
+                $response->msg = "Aconteceu um erro ao cadastrar prejeto.";
+            }
+
+            move_uploaded_file($_FILES['img']['tmp_name'], '../../assets/img/service/' . $newFile);
+
+            $Db->setParams([
+                'table' => 'project',
+                'data' => [
+                    'name' => $_POST['titulo'],
+                    'img' => $newFile,
+                ],
+                'condition' => [
+                    'id' => $_POST['id']
+                ]
+            ]);
+            //var_dump($_POST);
+            $u = $Db->update();
+
+            if ($u !== true) {
+                $response->error = true;
+                $response->msg = "Erro ao alterar textos.";
+            }
+        }
+    }
+
+    $Db->setParams([
+        'table' => 'project',
+        'data' => [
+            'name' => $_POST['titulo'],
+        ],
+        'condition' => [
+            'id' => $_POST['id']
+        ]
+    ]);
+    //var_dump($_POST['publicado']);
+    $u = $Db->update();
+
+    if ($u !== true) {
+        $response->error = true;
+        $response->msg = "Erro ao alterar textos.";
+    }
+
+    break;
+
+
+//REMOVER SERVIÇO
+case 'delete-projeto':
+
+    $Db->setParams(['table' => 'project', 'condition' => ['id' => $_POST['id']]]);
+    $r = $Db->result();
+
+    if($r[0]->img != null){
+        unlink('../../assets/img/service/' . $r[0]->img);
+    }
+
+    $Db->setParams(['table' => 'project', 'condition' => ['id' => $_POST['id']]]);
+    $Db->delete();
+
+    break;
+
+//CADASTRAR CLIENTE
+case 'insert-client':
+
+    $pasta = "../../assets/img/service/";
+
+    $fileType = strtolower(substr($_FILES['img']['name'], strrpos($_FILES['img']['name'], '.')));
+    $newFile = uniqid() . $fileType;
+    if ($fileType == '.jpg' || $fileType == '.jpeg' || $fileType == '.png') {
+        move_uploaded_file($_FILES['img']['tmp_name'], $pasta . $newFile);
+    }
+
+    if(!empty($_FILES['img']['name'])){
+
+        $Db->setParams([
+            'table' => 'client',
+            'data' => [
+                'name' => $_POST['titulo'],
+                'img' => $newFile,
+            ]
+        ]);
+    } else {
+
+        $Db->setParams([
+            'table' => 'client',
+            'data' => [
+                'name' => $_POST['titulo'],
+            ]
+        ]);
+    }
+    //var_dump();
+
+    if (!$Db->insert()) {
+        $response->error = true;
+        $response->msg = "Aconteceu um erro ao cadastrar cliente.";
+    }
+
+    break;
+
+
+//ALTERAR CLIENTE
+case 'update-client':
+
+    if (isset($_FILES['img']['name'])) {
+
+        $fileType = strtolower(substr($_FILES['img']['name'], strrpos($_FILES['img']['name'], '.')));
+        $newFile = uniqid() . $fileType;
+        if ($fileType == '.jpg' || $fileType == '.jpeg' || $fileType == '.png') {
+
+            $Db->setParams([
+                'table' => 'client',
+                'condition' => [
+                    'id' => $_POST['id'],
+                ]
+            ]);
+
+            $r = $Db->result();
+            //var_dump($r);
+
+            @unlink('../../assets/img/service/' . $r[0]->img);
+
+            if (!$Db->update()) {
+                $response->error = true;
+                $response->msg = "Aconteceu um erro ao cadastrar cliente.";
+            }
+
+            move_uploaded_file($_FILES['img']['tmp_name'], '../../assets/img/service/' . $newFile);
+
+            $Db->setParams([
+                'table' => 'client',
+                'data' => [
+                    'name' => $_POST['titulo'],
+                    'img' => $newFile,
+                ],
+                'condition' => [
+                    'id' => $_POST['id']
+                ]
+            ]);
+            //var_dump($_POST);
+            $u = $Db->update();
+
+            if ($u !== true) {
+                $response->error = true;
+                $response->msg = "Erro ao alterar textos.";
+            }
+        }
+    }
+
+    $Db->setParams([
+        'table' => 'client',
+        'data' => [
+            'name' => $_POST['titulo'],
+        ],
+        'condition' => [
+            'id' => $_POST['id']
+        ]
+    ]);
+    //var_dump($_POST['publicado']);
+    $u = $Db->update();
+
+    if ($u !== true) {
+        $response->error = true;
+        $response->msg = "Erro ao alterar textos.";
+    }
+
+    break;
+
+//REMOVER CLIENTE
+case 'delete-client':
+
+    $Db->setParams(['table' => 'client', 'condition' => ['id' => $_POST['id']]]);
+    $r = $Db->result();
+
+    if($r[0]->img != null){
+        unlink('../../assets/img/service/' . $r[0]->img);
+    }
+
+    $Db->setParams(['table' => 'client', 'condition' => ['id' => $_POST['id']]]);
+    $Db->delete();
+
+    break;
 }
 
 echo json_encode($response);
