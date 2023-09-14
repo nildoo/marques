@@ -67,6 +67,104 @@ $config = $config[0];
         </nav>
     </header>
 
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="gridSystemModalLabel">Que tipo de Cookies Utilizamos?</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table class="table table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <td>Cookies necessários</td>
+                                        <td>
+                                            Sempre Ativos
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cookies analitícos</td>
+                                        <td>
+                                            <label class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input">
+                                                <span class="custom-control-indicator"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cookies de publicidade</td>
+                                        <td>
+                                            <label class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input">
+                                                <span class="custom-control-indicator"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-12">
+                            <ul>
+                                <li>
+                                    <a class="btn btn-cookie" data-dismiss="modal" aria-label="Close" id="cookie-notification-close" href="#">Aceitar Todos</a>
+                                </li>
+                                <li>
+                                    <button class="btn btn-cookie-orange" data-dismiss="modal" aria-label="Close">Rejeitar não necessários</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cookie-notification" class="CookieMessage" style="display: none;">
+        <div class="CookieMessage-content">
+            <div class="policy-title">
+                <h2>Política de Cookies</h2>
+            </div>
+            <div class="Cookie-flex">
+                <div class="Cookie-description">
+                    Eu concordo e dou consentimento à Marques Montagens o tratamento dos meus dados pessoais para as finalidades descritas
+                    na Política de Privacidade. Eu li, compreendi e concordo com a Política de Privacidade e Termos de Uso deste site.
+                    Veja em <strong>Política de Privacidade</strong> e <strong>Termos de Uso.</strong>
+                </div>
+                <div class="Cookie-aception">
+                    <ul>
+                        <li><a id="cookie-notification-close-bottom" href="#">Aceitar</a></li>
+                        <li data-toggle="modal" data-target="#myModal">Gerenciar Cookies</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        if (!localStorage.getItem("cookiesAccepted")) {
+            var cookieMessage = document.getElementById('cookie-notification');
+            var closeCookie = document.getElementById('cookie-notification-close');
+            var closeCookieBottom = document.getElementById('cookie-notification-close-bottom');
+
+            cookieMessage.style.display = 'block';
+            closeCookie.addEventListener("click", function(e) {
+                e.preventDefault();
+                localStorage.setItem("cookiesAccepted", true);
+
+                cookieMessage.style.display = 'none';
+            });
+
+            cookieMessage.style.display = 'block';
+            closeCookieBottom.addEventListener("click", function(e) {
+                e.preventDefault();
+                localStorage.setItem("cookiesAccepted", true);
+
+                cookieMessage.style.display = 'none';
+            });
+        }
+    </script>
     <div class="content">
         <?php require_once $this->content; ?>
     </div>
@@ -89,8 +187,10 @@ $config = $config[0];
                                     <li <?= ($label == $this->url ? "class='active'" : "") ?>>
                                         <a href="<?= $label ?>"><?= $link ?></a>
                                     </li>
-
                                 <?php } ?>
+                                <li>
+                                    <a href="work-us">Trabalhe Conosco</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -98,11 +198,11 @@ $config = $config[0];
                         <div class="address">
                             <ul>
                                 <li>Endereço:</li>
-                                <li>Rua Leodegário Pedro da Silva, 565</li>
-                                <li>Imaruí, <strong>Itajaí</strong> | SC | 88305 600</li>
+                                <li><?= $config->address ?></li>
+                                <li><?= $config->district ?>, <strong><?= $config->city ?></strong> | <?= $config->state ?> | <?= $config->zipcode ?></li>
                                 <li>&nbsp;</li>
                                 <li><strong>55 47 3349-5662</strong></li>
-                                <li>contato@marquesmontagens.com.br</li>
+                                <li><?= $config->email ?></li>
                             </ul>
                         </div>
                     </div>
@@ -111,7 +211,7 @@ $config = $config[0];
                             <h2>Siga-nos <span> nas Redes</span></h2>
                             <ul>
                                 <li>
-                                    <a href="">
+                                    <a href="<?= $config->instagram ?>" target="_blank">
                                         <span class="fa-stack fa-lg">
                                             <i class="fas fa-circle fa-stack-2x"></i>
                                             <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
@@ -119,7 +219,7 @@ $config = $config[0];
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
+                                <a href="https://api.whatsapp.com/send?phone=55<?= $config->whatsapp ?>&#038;text=O que posso estar ajudando você?" target="_blank">
                                         <span class="fa-stack fa-lg">
                                             <i class="fas fa-circle fa-stack-2x"></i>
                                             <i class="fab fa-whatsapp fa-stack-1x fa-inverse"></i>
@@ -129,6 +229,19 @@ $config = $config[0];
                             </ul>
                             <h3>@marquesmontagens</h3>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Privacy-Policy text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <ul>
+                            <li><span>LGPD</span></li>
+                            <li><i class="fas fa-shield-alt"></i> <a href="<?= IMG . 'compliance/politica-de-privacidade.pdf' ?>" target="_blank"> Política de Privacidade</a></li>
+                            <li><i class="far fa-file-alt"></i> <a href="<?= IMG . 'compliance/termos-de-uso.pdf' ?>" target="_blank"> Termos de Uso</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>

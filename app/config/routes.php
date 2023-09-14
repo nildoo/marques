@@ -38,6 +38,7 @@ $routes['site'] = [
     'single' => ['template' => 'default-site'],
     'compliance' => ['template' => 'default-site'],
     'contact-us' => ['template' => 'default-site'],
+    'work-us' => ['template' => 'default-site'],
 ];
 
 return $routes;

@@ -417,7 +417,7 @@ case 'insert-img':
         $arqType = explode('/', $files['type'][$i]);
         $arqTemp = $files['tmp_name'][$i];
         $arqError = $files['error'][$i];
-        $arqName = uniqid() . '.' . $arqType[1];
+        $arqName =  $files['name'][$i];//. '.' . $arqType[1];
 
         move_uploaded_file($arqTemp, $pasta . $arqName);
 
