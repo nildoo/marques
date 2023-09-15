@@ -31,7 +31,7 @@ if (!empty($r)) {
                 <div class="col-sm-4">
                     <label for="img">Foto</label>
                     <div class="thumbnail">
-                        <img src="../<?= IMG . 'service/' . $r[0]->img ?>" alt="" height="90">
+                        <img src="../<?= IMG . 'galeria/' . $r[0]->img ?>" alt="" height="90">
                     </div>
                 </div>
             <?php } ?>

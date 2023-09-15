@@ -79,14 +79,22 @@
             <div class="col-sm-12">
                 <h1>Veja alguns dos Projetos Desenvolvidos</h1>
             </div>
-            <?php for($i = 0; $i <= 5; $i++){?>
+            <?php 
+                $Db->setParams([
+                    'table' => 'project',
+                    'order' => 'id ASC'
+                ]);
+                $projects = $Db->result();
+                //var_dump($projects);
+                foreach($projects as $picture){
+            ?>
                 <div class="col-sm-4">
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <img src="<?= IMG . 'galeria/foto-1.jpg'?>" alt="">
+                            <img src="<?= IMG . 'galeria/' . $picture->img ?>" alt="">
                         </div>
                         <div class="panel-footer">
-                            <h1>equipamentos do Processo</h1>
+                            <h1><?= $picture->name?></h1>
                         </div>
                     </div>
                 </div>

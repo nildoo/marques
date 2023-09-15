@@ -1169,6 +1169,11 @@ a:visited {
   text-align: center;
   padding: 10px;
 }
+.portifolio .panel .panel-body img,
+.portifolio .panel-defaul .panel-body img {
+  height: 300px;
+  width: 300px;
+}
 .portifolio .panel .panel-footer,
 .portifolio .panel-defaul .panel-footer {
   padding: 0;

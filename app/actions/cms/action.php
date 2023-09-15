@@ -710,7 +710,7 @@ case 'insert-img':
 //CADASTRAR PROJETO
 case 'insert-projeto':
 
-    $pasta = "../../assets/img/service/";
+    $pasta = "../../assets/img/galeria/";
 
     $fileType = strtolower(substr($_FILES['img']['name'], strrpos($_FILES['img']['name'], '.')));
     $newFile = uniqid() . $fileType;
@@ -765,14 +765,14 @@ case 'update-projeto':
             $r = $Db->result();
             //var_dump($r);
 
-            @unlink('../../assets/img/service/' . $r[0]->img);
+            @unlink('../../assets/img/galeria/' . $r[0]->img);
 
             if (!$Db->update()) {
                 $response->error = true;
                 $response->msg = "Aconteceu um erro ao cadastrar prejeto.";
             }
 
-            move_uploaded_file($_FILES['img']['tmp_name'], '../../assets/img/service/' . $newFile);
+            move_uploaded_file($_FILES['img']['tmp_name'], '../../assets/img/galeria/' . $newFile);
 
             $Db->setParams([
                 'table' => 'project',
@@ -821,7 +821,7 @@ case 'delete-projeto':
     $r = $Db->result();
 
     if($r[0]->img != null){
-        unlink('../../assets/img/service/' . $r[0]->img);
+        unlink('../../assets/img/galeria/' . $r[0]->img);
     }
 
     $Db->setParams(['table' => 'project', 'condition' => ['id' => $_POST['id']]]);
