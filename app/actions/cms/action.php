@@ -434,6 +434,20 @@ case 'insert-img':
     }
     
     break;
+//REMOVER COMPLIANCE ARCHIVES
+
+    case 'remover-img':
+
+        $Db->setParams(['table' => 'complia_archive', 'condition' => ['id' => $_POST['id']]]);
+        $r = $Db->result();
+        //var_dump($r);die;
+
+        unlink('../../assets/img/compliance/' . $r[0]->img);
+
+        $Db->setParams(['table' => 'complia_archive', 'condition' => ['id' => $_POST['id']]]);
+        $Db->delete();
+
+        break;
 
 //CADASTRAR NOTICIA
 

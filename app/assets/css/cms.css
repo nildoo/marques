@@ -189,6 +189,18 @@ textarea {
 .btn.btn-wpp:focus {
   background-color: #1da851;
 }
+.btn.btn-cookie {
+  background: #009af7;
+}
+.btn.btn-cookie:hover {
+  background-color: #81cfff;
+}
+.btn.btn-cookie-orange {
+  background: #ff4e00;
+}
+.btn.btn-cookie-orange:hover {
+  background-color: #cc3e00;
+}
 .btn.btn-darkBlue {
   background-color: #302841;
 }
@@ -644,6 +656,30 @@ body {
 }
 .navbar-default .dropdown-menu li #logout {
   color: #e91e63;
+}
+.compliance {
+  padding: 16px;
+}
+.compliance .panel,
+.compliance .panel-default {
+  border-radius: 0  ;
+}
+.compliance .panel .panel-heading,
+.compliance .panel-default .panel-heading {
+  text-align: center;
+}
+.compliance .panel .panel-heading .panel-title i,
+.compliance .panel-default .panel-heading .panel-title i {
+  color: #E53935;
+  font-size: 26px;
+}
+.compliance .panel .panel-body,
+.compliance .panel-default .panel-body {
+  text-align: center;
+}
+.compliance .panel .panel-footer,
+.compliance .panel-default .panel-footer {
+  text-align: center;
 }
 @media (min-width: 768px) {
   #wrapper {

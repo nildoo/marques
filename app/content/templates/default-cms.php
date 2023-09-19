@@ -115,7 +115,7 @@ $user = $r[0];
             </ul>
         </div>
 
-        <br><br>
+        <br>
 
         <div class="container-fluid">
             <div class="row">

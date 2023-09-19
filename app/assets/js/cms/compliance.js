@@ -65,23 +65,26 @@ $(function () {
     });
 
     $(".remover").on('click', function () {
-        $.ajax({
-            data: {
-                action: 'remover-img',
-                id: $(this).attr("data-id")
-            },
-            dataType: 'json',
-            type: 'post',
-            url: '../app/actions/cms/action.php',
-            success: function (response) {
-                if (response.error === false) {
-                    location.reload();
-                } else {
-                    alert(response.msg);
-                }
-            }
-        });
 
+        if (confirm('Deseja realmente excluir?')) {
+
+            $.ajax({
+                data: {
+                    action: 'remover-img',
+                    id: $(this).attr("data-id")
+                },
+                dataType: 'json',
+                type: 'post',
+                url: '../app/actions/cms/action.php',
+                success: function (response) {
+                    if (response.error === false) {
+                        location.reload();
+                    } else {
+                        alert(response.msg);
+                    }
+                }
+            });
+        }
         return false;
 
     });

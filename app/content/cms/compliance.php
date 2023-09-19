@@ -18,12 +18,9 @@ $r = $about[0];
     </div>
 </form>
 
-<br>
-<br>
-
 <form id="form-img" enctype="multipart/form-data">
     <div class="col-md-4">
-        <label for="imgs">Adicionar Arquivos PDF</label>
+        <label for="img">Adicionar Arquivos PDF</label>
         <div class="input-group">
             <input class="form-control" id="img" name="img[]" type="file" multiple>
             <span class="input-group-addon" id="add-img"><i class="fa fa-plus"></i></span>
@@ -31,8 +28,11 @@ $r = $about[0];
     </div>
 </form>
 
-<div class="col-md-12">
-    <ul>
+<div class="clearfix"></div>
+
+
+<div class="compliance">
+    <div class="row">
         <?php
 
         $Db->setParams([
@@ -45,19 +45,29 @@ $r = $about[0];
 
         $pdf = $Db->result();
 
-        foreach ($pdf as $img) { ?>
-            <li class="ui-state-default" id="<?= $img->id ?>" style="display: inline-block;">
-                <div class="cms-img text-center">
-                    <i class="fa fa-file-pdf-o"></i>
-                    <br />
-                    <button class="btn btn-sm btn-red remover" type="button" data-id="<?= $img->id ?>">
-                        Remover
-                    </button>
-                </div>
-            <?php } ?>
-            </li>
-    </ul>
+        foreach ($pdf as $img) {
 
+            $extencao = explode('.', $img->img);
+        ?>
+            <div class="col-sm-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            <i class="fa fa-file-pdf-o"></i>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <?= $extencao[0] ?>
+                    </div>
+                    <div class="panel-footer">
+                        <button class="btn btn-sm btn-red remover" type="button" data-id="<?= $img->id ?>">
+                            Remover
+                        </button>
+                    </div>
+                </div>
+            </div>
+        <?php } ?>
+    </div>
 </div>
 
 <script src="../<?= JS_CMS . 'compliance.js' ?>"></script>

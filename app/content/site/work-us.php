@@ -19,20 +19,17 @@
                     <div class="col-sm-12">
                         <input class="form-control" name="nome" id="nome" placeholder="Nome*" required />
                     </div>
-                    <div class="col-sm-12">
-                        <input class="form-control" name="empresa" id="empresa" placeholder="Empresa*" required />
+                    <div class="col-sm-6">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="E-mail*" required />
                     </div>
                     <div class="col-sm-6">
-                        <input class="form-control" name="telefone" id="telefone" placeholder="(DDD)+Telefone" required />
+                        <input class="form-control" name="telefone" id="telefone" placeholder="(DDD)+Telefone*" required />
                     </div>
                     <div class="col-sm-6">
-                        <input type="email" class="form-control" name="email" id="email" placeholder="E-mail" required />
-                    </div>
-                    <div class="col-sm-6">
-                        <input type="file" class="form-control" name="img" id="img" />
+                        <input type="file" class="form-control" name="img" id="img" required />
                     </div>
                     <div class="col-sm-12">
-                        <textarea class="form-control" name="projeto" id="projeto" cols="30" rows="3" placeholder="Qual o seu projeto?" required></textarea>
+                        <textarea class="form-control" name="projeto" id="projeto" cols="30" rows="3" placeholder="Comente aqui" required></textarea>
                     </div>
                     <div class="col-sm-12">
                         <div class="pull-right">
