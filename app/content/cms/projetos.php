@@ -16,6 +16,7 @@ if (!empty($r)) { ?>
                 <tr>
                     <td style="width: 10%;"><i class="fa fa-address-card-o"></i> Data</td>
                     <td>Nome</td>
+                    <td>Ativo</td>
                 </tr>
             </thead>
             <tbody>
@@ -23,6 +24,7 @@ if (!empty($r)) { ?>
                     <tr onclick="detalhes(<?= $value->id ?>)">
                         <td><?= date('d/m/Y', strtotime($value->created_at)) ?></td>
                         <td><?= $value->name ?></td>
+                        <td><?= $value->active == 1 ? 'Sim' : 'Não' ?></td>
                     </tr>
                 <?php } ?>
             </tbody>

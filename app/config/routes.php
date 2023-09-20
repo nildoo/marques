@@ -36,6 +36,7 @@ $routes['site'] = [
     'clients' => ['template' => 'default-site'],
     'blog' => ['template' => 'default-site'],
     'single' => ['template' => 'default-site'],
+    'project' => ['template' => 'default-site'],
     'compliance' => ['template' => 'default-site'],
     'contact-us' => ['template' => 'default-site'],
     'work-us' => ['template' => 'default-site'],

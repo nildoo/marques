@@ -83,6 +83,19 @@ class Routes
         }
 
 
+        if ($this->app == 'site') {
+            $details = strpos($this->url, 'project');
+            if ($details !== false) {
+
+                $details = explode('-', $this->url);
+                $this->url = $details[0];
+                unset($details[0]);
+                $details = implode('-', $details);
+
+                $this->params = ['project' => $details];
+            }
+        }
+
         $routes = require_once CONFIG . 'routes.php';
 
         $this->path = CONTENT . $this->app . '/';

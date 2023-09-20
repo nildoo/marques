@@ -525,7 +525,7 @@ case 'insert-img':
                         'id' => $_POST['id']
                     ]
                 ]);
-                var_dump($_POST);
+                //var_dump($_POST);
                 $u = $Db->update();
 
                 if ($u !== true) {
@@ -724,38 +724,21 @@ case 'insert-img':
 //CADASTRAR PROJETO
 case 'insert-projeto':
 
-    $pasta = "../../assets/img/galeria/";
-
-    $fileType = strtolower(substr($_FILES['img']['name'], strrpos($_FILES['img']['name'], '.')));
-    $newFile = uniqid() . $fileType;
-    if ($fileType == '.jpg' || $fileType == '.jpeg' || $fileType == '.png') {
-        move_uploaded_file($_FILES['img']['tmp_name'], $pasta . $newFile);
-    }
-
-    if(!empty($_FILES['img']['name'])){
+    $ativo = ($_POST['publicado'] == 'true' ? 1 : 0);
 
         $Db->setParams([
             'table' => 'project',
             'data' => [
                 'name' => $_POST['titulo'],
-                'img' => $newFile,
+                'url' => $Methods->urlAmigavel($_POST['titulo']),
+                'active' =>  $ativo
             ]
         ]);
-    } else {
+        if (!$Db->insert()) {
+            $response->error = true;
+            $response->msg = "Aconteceu um erro ao cadastrar Projeto.";
+        }
 
-        $Db->setParams([
-            'table' => 'servicesoffered',
-            'data' => [
-                'name' => $_POST['titulo'],
-            ]
-        ]);
-    }
-    //var_dump();
-
-    if (!$Db->insert()) {
-        $response->error = true;
-        $response->msg = "Aconteceu um erro ao cadastrar Projeto.";
-    }
 
     break;
 
@@ -763,61 +746,19 @@ case 'insert-projeto':
 //ALTERAR PROJETO
 case 'update-projeto':
 
-    if (isset($_FILES['img']['name'])) {
-
-        $fileType = strtolower(substr($_FILES['img']['name'], strrpos($_FILES['img']['name'], '.')));
-        $newFile = uniqid() . $fileType;
-        if ($fileType == '.jpg' || $fileType == '.jpeg' || $fileType == '.png') {
-
-            $Db->setParams([
-                'table' => 'project',
-                'condition' => [
-                    'id' => $_POST['id'],
-                ]
-            ]);
-
-            $r = $Db->result();
-            //var_dump($r);
-
-            @unlink('../../assets/img/galeria/' . $r[0]->img);
-
-            if (!$Db->update()) {
-                $response->error = true;
-                $response->msg = "Aconteceu um erro ao cadastrar prejeto.";
-            }
-
-            move_uploaded_file($_FILES['img']['tmp_name'], '../../assets/img/galeria/' . $newFile);
-
-            $Db->setParams([
-                'table' => 'project',
-                'data' => [
-                    'name' => $_POST['titulo'],
-                    'img' => $newFile,
-                ],
-                'condition' => [
-                    'id' => $_POST['id']
-                ]
-            ]);
-            //var_dump($_POST);
-            $u = $Db->update();
-
-            if ($u !== true) {
-                $response->error = true;
-                $response->msg = "Erro ao alterar textos.";
-            }
-        }
-    }
+    $ativo = ($_POST['publicado'] == 'true' ? 1 : 0);
 
     $Db->setParams([
         'table' => 'project',
         'data' => [
             'name' => $_POST['titulo'],
+            'url' => $Methods->urlAmigavel($_POST['titulo']),
+            'active' =>  $ativo
         ],
         'condition' => [
             'id' => $_POST['id']
         ]
     ]);
-    //var_dump($_POST['publicado']);
     $u = $Db->update();
 
     if ($u !== true) {
@@ -827,22 +768,82 @@ case 'update-projeto':
 
     break;
 
+// IMAGENS PROJETOS
+case 'insert-project-img':
 
-//REMOVER SERVIÇO
-case 'delete-projeto':
+    $pasta = "../../assets/img/galeria/";
 
-    $Db->setParams(['table' => 'project', 'condition' => ['id' => $_POST['id']]]);
+    foreach ($_FILES as $files) {
+        for ($i = 0; $i < count($files['name']); $i++) {
+
+            if (strlen($files['name'][$i]) > 0) {
+
+                $arqType = explode('.', $files['name'][$i]);
+                $arqType = end($arqType);
+                $arqTemp = $files['tmp_name'][$i];
+                $arqError = $files['error'][$i];
+                $arqName = uniqid() . '.' . $arqType;
+
+                if (move_uploaded_file($arqTemp, $pasta . $arqName)) {
+
+                    $Db->setParams([
+                        'table' => 'project_img',
+                        'data' => [
+                            'f_id_project' => $_POST['id'],
+                            'img' => $arqName,
+                            'position' => 0
+                        ]
+                    ]);
+
+                    $Db->insert();
+                } else {
+                    echo 'erro';
+                }
+            }
+        }
+    }
+    
+    break;
+//ALTERAR ORDERM
+    case 'alterar-ordem':
+        foreach ($_POST['ordem'] as $key => $ordem) {
+            //echo $ordem;
+            $Db->setParams([
+                'table' => 'project_img',
+                'data' => ['position' => $key],
+                'condition' => [
+                    'id' => $ordem
+                ]
+            ]);
+            if (!$Db->update()) {
+                $response->error = true;
+                $response->msg = "Erro ao alterar posicação da imagem";
+                exit;
+            }
+        }
+        break;
+
+//DELETE FOTO PROJETO
+case 'delete-projeto-img':
+
+    $Db->setParams([
+        'table' => 'project_img',
+        'condition' => [
+            'id' => $_POST['id']
+        ]
+    ]);
     $r = $Db->result();
 
-    if($r[0]->img != null){
-        unlink('../../assets/img/galeria/' . $r[0]->img);
+    unlink('../../assets/img/galeria/' . $r[0]->img);
+
+    $response->data = $Db->result()[0]->f_id_project;
+
+    if ($Db->delete() !== true) {
+        $response->error = true;
+        $response->msg = "Erro ao remover foto.";
     }
 
-    $Db->setParams(['table' => 'project', 'condition' => ['id' => $_POST['id']]]);
-    $Db->delete();
-
     break;
-
 //CADASTRAR CLIENTE
 case 'insert-client':
 

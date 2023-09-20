@@ -79,24 +79,39 @@
             <div class="col-sm-12">
                 <h1>Veja alguns dos Projetos Desenvolvidos</h1>
             </div>
-            <?php 
+            <?php
+            $Db->setParams([
+                'table' => 'project',
+                'condition' => [
+                    'active' => '1'
+                ],
+                'order' => 'id ASC'
+            ]);
+            $projects = $Db->result();
+            //var_dump($projects);
+            foreach ($projects as $picture) {
                 $Db->setParams([
-                    'table' => 'project',
-                    'order' => 'id ASC'
+                    'table' => 'project_img',
+                    'condition' => [
+                        'f_id_project' => $picture->id
+                    ],
+                    'limit' => '1',
+                    'order' => 'position ASC'
                 ]);
-                $projects = $Db->result();
-                //var_dump($projects);
-                foreach($projects as $picture){
+                $imgs = $Db->result();
+                //var_dump($imgs);
             ?>
                 <div class="col-sm-4">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <img src="<?= IMG . 'galeria/' . $picture->img ?>" alt="">
+                    <a href="project-<?= $picture->id . '-' . $picture->url ?>">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <img src="<?= IMG . 'galeria/' . $imgs[0]->img ?>" alt="">
+                            </div>
+                            <div class="panel-footer">
+                                <h1><?= $picture->name ?></h1>
+                            </div>
                         </div>
-                        <div class="panel-footer">
-                            <h1><?= $picture->name?></h1>
-                        </div>
-                    </div>
+                    </a>
                 </div>
             <?php } ?>
         </div>
@@ -110,7 +125,7 @@
                 <div class="col-sm-12">
                     <div class="titleForm">
                         <h1>Independentemente do segmento da sua empresa, nossa expertise e <span>compromisso
-                            com a qualidade garantirão resultados impressionantes.</span></h1>
+                                com a qualidade garantirão resultados impressionantes.</span></h1>
                         <h2>Entre em contato agora!</span>
                         </h2>
                     </div>
@@ -148,8 +163,10 @@
                         <div class="col-sm-12">
                             <div class="">
                                 <ul class="whatsapp">
-                                    <li><h1>Atendemos também pelo <span>Whatsapp</span></h1></li>
-                                    <li><img src="<?= IMG . 'botao_iniciar_conversa2.png'?>" alt=""></li>
+                                    <li>
+                                        <h1>Atendemos também pelo <span>Whatsapp</span></h1>
+                                    </li>
+                                    <li><img src="<?= IMG . 'botao_iniciar_conversa2.png' ?>" alt=""></li>
                                 </ul>
                             </div>
                         </div>

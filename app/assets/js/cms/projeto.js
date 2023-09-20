@@ -7,6 +7,7 @@ $(function () {
 
         formData.append('action', "insert-projeto");
         formData.append('titulo', $("#titulo").val());
+        formData.append('publicado', $("#publicado").prop('checked'));
         $.ajax({
             url: '../app/actions/cms/action.php',
             data: formData,
@@ -45,6 +46,7 @@ $(function () {
         formData.append('action', "update-projeto");
         formData.append('id', $("#id").val());
         formData.append('titulo', $("#titulo").val());
+        formData.append('publicado', $("#publicado").prop('checked'));
         $.ajax({
             url: '../app/actions/cms/action.php',
             data: formData,
@@ -74,15 +76,45 @@ $(function () {
         });
         return false;
     });
-    $("#remover").on('click', function () {
+
+    $("#add-img").on('click', function () {
+
+        var form = $("#form-img")[0];
+        var formData = new FormData(form);
+
+        formData.append('action', "insert-project-img");
+        formData.append('id', $("#id").val());
+
+        $.ajax({
+            url: '../app/actions/cms/action.php',
+            data: formData,
+            processData: false,
+            contentType: false,
+            type: 'post',
+            beforeSend: function () {
+                $("#add-img").html("<i class='fa fa-spin fa-spinner'></i>");
+            },
+            success: function () {
+                $("#add-img").html("<i class='fa fa-plus'></i>");
+                location.reload();
+            }
+        });
+
+        return false;
+
+    });
+
+
+
+    $(".remover-foto").on('click', function () {
 
         if (confirm('Deseja realmente excluir?')) {
 
             $.ajax({
                 url: '../app/actions/cms/action.php',
                 data: {
-                    action: 'delete-projeto',
-                    id: $("#id").val()
+                    action: 'delete-projeto-img',
+                    id: $(this).attr("data-id")
                 },
                 dataType: 'json',
                 type: 'post',
@@ -95,7 +127,7 @@ $(function () {
                             showConfirmButton: false
                         });
                         setTimeout(function () {
-                            window.location = "projetos";
+                            window.location = 'detalhes-projeto-' + response.data
                         }, 1000)
                     } else {
                         swal({
