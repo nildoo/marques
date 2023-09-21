@@ -30,6 +30,11 @@
                     </div>
                     <div class="col-sm-12">
                         <textarea class="form-control" name="projeto" id="projeto" cols="30" rows="3" placeholder="Comente aqui" required></textarea>
+                        <p>Ao clicar em "ENVIAR", você concorda em permitir que a Marques Montagens Industriais LTDA.
+                             colete, armazene e processe os dados pessoais preenchidos acima para a finalidade, única
+                            e exclusiva, de recebimento de currículo, sua avaliação e seleção, e para eventual participação
+                             em processo de recrutamento para vaga de emprego nos termos da <a href="">Política de Privacidade</a>  que li
+                              e tomei ciência</p>
                     </div>
                     <div class="col-sm-12">
                         <div class="pull-right">

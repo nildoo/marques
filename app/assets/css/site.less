@@ -724,27 +724,49 @@ a {
     text-align: center;
     margin-bottom: 20px;
   }
-  .panel, .panel-defaul{
-    padding: 0;
-    border-color: transparent;
-    border-radius: 0;
-    background: none;
-    box-shadow: none;
-    .panel-body{
-      text-align: center;
-      padding: 10px;
-      img{
-        height: 300px;
-        width: 300px;
-      }
+  h2{
+    font-family: 'URWDINCond-Bold', sans-serif;
+    color: @redMain;
+    text-transform: uppercase;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .picture, .thumbnail{
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 10px;
+    .image {
+      display: block;
+      width: 100%;
+      height: auto;
     }
-    .panel-footer{
-      padding: 0;
-      background: transparent;
-      border: none;
-      border-radius: 0;
-      h1{
-        font-size: 20px;
+    .overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: .3s ease;
+      background-color: rgb(239 13 18 / 65%);
+      border: solid white 4px;
+      &:hover{
+        opacity: 1;
+      }
+      .icon {
+        color: white;
+        font-size: 36px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        text-align: center;
+        display: block;
       }
     }
   }
@@ -925,6 +947,13 @@ a {
         }
       }
     }
+  }
+  p{
+    margin: 8px 0;
+    text-align: justify;
+    font-size: 11px;
+    font-weight: bold;
+    color: @blueMain;
   }
 
   .form-control,
@@ -1607,4 +1636,48 @@ input[placeholder],
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+
+
+.photo-gallery {
+  color:#313437;
+  background-color:#fff;
+}
+
+.photo-gallery p {
+  color:#7d8285;
+}
+
+.photo-gallery h2 {
+  font-weight:bold;
+  margin-bottom:40px;
+  padding-top:40px;
+  color:inherit;
+}
+
+@media (max-width:767px) {
+  .photo-gallery h2 {
+    margin-bottom:25px;
+    padding-top:25px;
+    font-size:24px;
+  }
+}
+
+.photo-gallery .intro {
+  font-size:16px;
+  max-width:500px;
+  margin:0 auto 40px;
+}
+
+.photo-gallery .intro p {
+  margin-bottom:0;
+}
+
+.photo-gallery .photos {
+  padding-bottom:20px;
+}
+
+.photo-gallery .item {
+  padding-bottom:30px;
 }

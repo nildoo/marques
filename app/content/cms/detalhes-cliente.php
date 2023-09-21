@@ -1,6 +1,6 @@
 <?php
 $Db->setParams([
-    'table' => 'project',
+    'table' => 'client',
     'condition' => [
         'id' => $this->params['id']
     ]
@@ -9,7 +9,7 @@ $r = $Db->result();
 if (!empty($r)) {
 
 ?>
-    <form id="u-form-projeto">
+    <form id="u-form-cliente">
 
         <div class="row">
 
@@ -48,8 +48,8 @@ if (!empty($r)) {
     </form>
 <?php } else { ?>
     <script>
-        window.location = "projetos";
+        window.location = "clientes";
     </script>
 <?php } ?>
 
-<script src="../<?= JS_CMS . 'projeto.js' ?>"></script>
+<script src="../<?= JS_CMS . 'cliente.js' ?>"></script>

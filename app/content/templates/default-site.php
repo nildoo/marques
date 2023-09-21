@@ -20,19 +20,40 @@ $config = $config[0];
     <meta name="author" content="<?= AUTHOR ?>">
 
     <!-- CSS -->
+
     <link rel="stylesheet" href="<?= COMPONENTS . 'swiper/css/swiper.min.css' ?>">
-    <link rel="stylesheet" href="<?= COMPONENTS . 'bootstrap/css/bootstrap.min.css' ?>" hide>
+    <link rel="stylesheet" href="<?= COMPONENTS . 'bootstrap/css/bootstrap.min.css' ?>">
+    <link rel="stylesheet" href="<?= COMPONENTS . 'lightbox/css/lsb.css' ?>">
     <link rel="stylesheet" href="<?= COMPONENTS . 'font-awesome/css/all.css' ?>">
     <link rel="stylesheet" href="<?= COMPONENTS . 'owl-carousel/css/owl.carousel.min.css' ?>">
     <link rel="stylesheet" href="<?= COMPONENTS . 'owl-carousel/css/owl.theme.min.css' ?>">
     <link rel="stylesheet" href="<?= CSS . 'site.css' ?>">
     <link rel="stylesheet" href="<?= CSS . 'hero.css' ?>">
-    <link rel="stylesheet" href="<?= CSS . 'accordion.css' ?>">
 
     <!-- JS -->
-    <script src="<?= COMPONENTS . 'jquery/jquery.min.js' ?>"></script>
+    <script src="<?= COMPONENTS . 'jquery/jquery-2.2.4.min.js' ?>"></script>
     <script src="<?= COMPONENTS . 'jquery/jquery.easing.min.js' ?>"></script>
     <script src="<?= COMPONENTS . 'bootstrap/js/bootstrap.min.js' ?>"></script>
+    <script src="<?= COMPONENTS . 'lightbox/js/lsb.js' ?>"></script>
+    <script>
+        $(window).load(function() {
+            $.fn.lightspeedBox({
+                showDownloadButton: false,
+                showAutoPlayButton: false,
+                showImageCount: false,
+                autoPlayback: false,
+                locale:{
+                    nextButton: 'Próxima',
+                    prevButton: 'Anterior',
+                    closeButton: 'Fechar',
+                    downloadButton: 'Download imagem',
+                    noImageFound: 'Sem imagem',
+                    downloadButton: 'Download imagem',
+                    autoplayButton: 'Autoplay'
+                }
+            });
+        });
+    </script>
 
     <!-- Favicons -->
     <link rel="shortcut icon" type="image/x-icon" href="<?= IMG . 'favicon.png' ?>" />
@@ -219,7 +240,7 @@ $config = $config[0];
                                     </a>
                                 </li>
                                 <li>
-                                <a href="https://api.whatsapp.com/send?phone=55<?= $config->whatsapp ?>&#038;text=O que posso estar ajudando você?" target="_blank">
+                                    <a href="https://api.whatsapp.com/send?phone=55<?= $config->whatsapp ?>&#038;text=O que posso estar ajudando você?" target="_blank">
                                         <span class="fa-stack fa-lg">
                                             <i class="fas fa-circle fa-stack-2x"></i>
                                             <i class="fab fa-whatsapp fa-stack-1x fa-inverse"></i>

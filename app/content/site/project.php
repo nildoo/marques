@@ -33,14 +33,24 @@ $project = $Db->result();
                         'order' => 'id ASC'
                     ]);
                     $imgs = $Db->result();
+
                     //var_dump($imgs);
                     foreach ($imgs as $img) { ?>
                         <div class="col-sm-3">
-                            <div class="text-center">
-                                <img class="thumbnail" src="<?= IMG  . 'galeria/' . $img->img ?>" style="height: 250px;">
+                            <div class="thumbnail">
+                                <a href="<?= IMG . 'galeria/' . $img->img ?>" class="lsb-preview" data-lsb-group="project">
+                                    <img src="<?= IMG . 'galeria/' . $img->img ?>" alt="<?= $project[0]->name?>" />
+                                </a>
                             </div>
                         </div>
                     <?php } ?>
+                    
+                    <div class="clearfix"></div>
+
+                    <div class="col-sm-12 text-center">
+                        <a href="services"><button class="btn btn-blue"><i class="fa fa-arrow-left"></i> Voltar</button></a>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -49,7 +59,7 @@ $project = $Db->result();
 </section>
 <div>
     <script>
-        window.location = 'blog-fullpage';
+        window.location = 'initial';
     </script>
 </div>
 <?php } ?>

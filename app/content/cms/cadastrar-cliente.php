@@ -1,4 +1,4 @@
-<form id="form-projeto">
+<form id="form-cliente">
 
     <div class="col-sm-4">
         <label for="titulo">Título</label>
@@ -13,4 +13,4 @@
     </div>
 </form>
 <div class="clearfix"></div>
-<script src="../<?= JS_CMS . 'projeto.js' ?>"></script>
+<script src="../<?= JS_CMS . 'cliente.js' ?>"></script>

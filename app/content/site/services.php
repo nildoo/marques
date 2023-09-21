@@ -77,7 +77,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h1>Veja alguns dos Projetos Desenvolvidos</h1>
+                <h1>Veja alguns Projetos Desenvolvidos</h1>
             </div>
             <?php
             $Db->setParams([
@@ -96,24 +96,27 @@
                         'f_id_project' => $picture->id
                     ],
                     'limit' => '1',
-                    'order' => 'position ASC'
+                    'order' => 'position, f_id_project ASC'
                 ]);
                 $imgs = $Db->result();
                 //var_dump($imgs);
+                if (!empty($imgs)) {
             ?>
-                <div class="col-sm-4">
-                    <a href="project-<?= $picture->id . '-' . $picture->url ?>">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                <img src="<?= IMG . 'galeria/' . $imgs[0]->img ?>" alt="">
+                    <div class="col-sm-4">
+                        <a href="project-<?= $picture->id . '-' . $picture->url ?>">
+                            <div class="picture thumbnail">
+                                <img src="<?= IMG . 'galeria/' . $imgs[0]->img ?>" class="image">
+                                <div class="overlay">
+                                    <div class="icon">
+                                        <i class="fas fa-eye"></i>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="panel-footer">
-                                <h1><?= $picture->name ?></h1>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            <?php } ?>
+                            <h2><?= $picture->name?></h2>
+                        </a>
+                    </div>
+            <?php }
+            } ?>
         </div>
     </div>
 </section>
