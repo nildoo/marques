@@ -15,7 +15,7 @@
                 <h1>Entre em contato e descubra como podemos contribuir para o sucesso do seu negócio.</h1>
             </div>
             <div class="col-md-6">
-                <form id='#form-contact'>
+                <form id='form-contact'>
                     <div class="col-sm-12">
                         <input class="form-control" name="nome" id="nome" placeholder="Nome*" required />
                     </div>
@@ -61,7 +61,9 @@
                     <div class="wpp">
                         <h2>Atendemos também <span>pelo <strong>WhatsApp</strong></span></h2>
                         <p>
-                            <img src="<?= IMG . 'botao_iniciar_conversa 2.png'?>" alt="">
+                            <a href="https://api.whatsapp.com/send?phone=55<?= $config->whatsapp ?>&#038;text=O que posso estar ajudando você?" target="_blank">
+                                <img src="<?= IMG . 'botao_iniciar_conversa 2.png'?>" alt="">
+                            </a>
                         </p>
                     </div>
                 </div>
@@ -74,8 +76,6 @@
         </div>
     </div>
 </section>
-
-<script src="<?= COMPONENTS . 'jquery/jquery.mask.min.js' ?>"></script>
 <script>
     $(document).ready(function() {
         $('#telefone').mask('(00) 00000-0009')

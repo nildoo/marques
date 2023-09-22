@@ -1355,12 +1355,18 @@ a:visited {
 .contact-new .content-desc .wpp p img {
   height: 51px;
 }
-.contact-new p {
+.contact-new .work-us {
   margin: 8px 0;
   text-align: justify;
   font-size: 11px;
   font-weight: bold;
   color: #2a3355;
+}
+.contact-new .work-us a {
+  color: blue;
+}
+.contact-new .work-us a:hover {
+  color: red;
 }
 .contact-new .form-control,
 .contact-new input,

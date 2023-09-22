@@ -15,7 +15,7 @@
                 <h1>Faça parte da nossa equipe e venha trabalhar conosco.</h1>
             </div>
             <div class="col-md-6">
-                <form id='#form-contact'>
+                <form class="form-group" role="form" id="form-rh" enctype="multipart/form-data">
                     <div class="col-sm-12">
                         <input class="form-control" name="nome" id="nome" placeholder="Nome*" required />
                     </div>
@@ -26,15 +26,16 @@
                         <input class="form-control" name="telefone" id="telefone" placeholder="(DDD)+Telefone*" required />
                     </div>
                     <div class="col-sm-6">
-                        <input type="file" class="form-control" name="img" id="img" required />
+                        <input class="form-control" id="arquivo" type="file" placeholder="arquivo" name="arquivo" required>
                     </div>
                     <div class="col-sm-12">
-                        <textarea class="form-control" name="projeto" id="projeto" cols="30" rows="3" placeholder="Comente aqui" required></textarea>
-                        <p>Ao clicar em "ENVIAR", você concorda em permitir que a Marques Montagens Industriais LTDA.
+                        <textarea class="form-control" name="mensagem" id="mensagem" cols="30" rows="3" placeholder="Comente aqui" required></textarea>
+                        <p class="work-us">Ao clicar em "ENVIAR", você concorda em permitir que a Marques Montagens Industriais LTDA.
                              colete, armazene e processe os dados pessoais preenchidos acima para a finalidade, única
                             e exclusiva, de recebimento de currículo, sua avaliação e seleção, e para eventual participação
-                             em processo de recrutamento para vaga de emprego nos termos da <a href="">Política de Privacidade</a>  que li
-                              e tomei ciência</p>
+                             em processo de recrutamento para vaga de emprego nos termos da 
+                             <a href="<?= IMG . 'compliance/Politica de Privacidade de envio de Curriculos.pdf' ?>" target="_blank">Política de Privacidade</a>
+                               que li e tomei ciência.</p>
                     </div>
                     <div class="col-sm-12">
                         <div class="pull-right">

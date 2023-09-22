@@ -114,7 +114,11 @@
                                     <li>
                                         <h1>Atendemos também pelo <span>Whatsapp</span></h1>
                                     </li>
-                                    <li><img src="<?= IMG . 'botao_iniciar_conversa2.png' ?>" alt=""></li>
+                                    <li>
+                                        <a href="https://api.whatsapp.com/send?phone=55<?= $config->whatsapp ?>&#038;text=O que posso estar ajudando você?" target="_blank">
+                                            <img src="<?= IMG . 'botao_iniciar_conversa2.png' ?>" alt="">
+                                        </a>    
+                                    </li>
                                 </ul>
                             </div>
                         </div>

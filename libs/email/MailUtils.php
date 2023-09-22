@@ -9,7 +9,7 @@ class MailUtils
     protected $host = "smtp.marquesmontagens.com.br"; // smtp.uni5.net
     protected $username = "Marques Montagens";
     protected $email = "contato@marquesmontagens.com.br";
-    protected $password = "ctt1290";
+    protected $password = "Ctt2023*a";
 
     public function sendMail($nome, $email, $assunto, $mensagem)
     {

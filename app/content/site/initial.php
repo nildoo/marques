@@ -175,7 +175,7 @@ $texto =  (explode(" ", $r[0]->title, 2));
         <div class="row">
             <div class="col-sm-12">
                 <div class="description">
-                    <?= $config->service?>
+                    <?= $config->service ?>
                     <!-- Atendemos diversos setores, desde <strong>indústria química, papel celulose e alimentícia até o segumento naval, hidroelétrico.</strong>
                     <span>Conte a Marques Montagens para entregar resultados de alta qualidade e surpreender seus clientes!</span> -->
                 </div>
@@ -187,7 +187,7 @@ $texto =  (explode(" ", $r[0]->title, 2));
 <section class="center-contact">
     <div class="side-left">
         <div class="content">
-        <h1><?= $config->contact?></h1>
+            <h1><?= $config->contact ?></h1>
             <!-- <h1>Entre em contato e descubra como <span>nossas soluções podem levar seu negócio a novos patamares.</span></h1> -->
             <div class="areaBotton">
                 <a href="contact-us"><button class="btn btn-trans">Fale Agora Conosco</button></a>
@@ -205,15 +205,15 @@ $texto =  (explode(" ", $r[0]->title, 2));
         <div class="row">
             <div class="col-sm-12">
                 <ul>
-                    <?php 
+                    <?php
                     $Db->setParams([
                         'table' => 'client',
                         'order' => 'name ASC'
                     ]);
                     $clients = $Db->result();
-                    foreach($clients as $client){?>
+                    foreach ($clients as $client) { ?>
                         <li>
-                            <img src="<?= IMG . 'service/' . $client->img ?>" alt="<?= $client->name?>"/>
+                            <img src="<?= IMG . 'service/' . $client->img ?>" alt="<?= $client->name ?>" />
                         </li>
                     <?php } ?>
                 </ul>
@@ -221,7 +221,7 @@ $texto =  (explode(" ", $r[0]->title, 2));
             <div class="col-sm-12">
                 <div class="description">
                     Com mais de 30 anos de experiencia, a Marques Montagens contruiu uma reputação sólida no mercado metalurgico
-                    atendendo todo o território nacional e América do Sul. Nossa história é pautada em entregas pontuais, quantidade
+                    atendendo todo o território nacional e internacional. Nossa história é pautada em entregas pontuais, quantidade
                     exepcional e satisfação garantida. Sua confiança é a nossa maior conquista!
                 </div>
             </div>
@@ -251,9 +251,9 @@ $texto =  (explode(" ", $r[0]->title, 2));
                                 <h3>Atendemos também <span>pelo <b>Whatsapp</b></span></h3>
                             </div>
                             <div class="col-sm-6">
-                                <div class="initai-talk">
-                                    <a href=""></a>
-                                </div>
+                                <a href="https://api.whatsapp.com/send?phone=55<?= $config->whatsapp ?>&#038;text=O que posso estar ajudando você?" target="_blank">
+                                    <div class="initai-talk"></div>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -261,7 +261,7 @@ $texto =  (explode(" ", $r[0]->title, 2));
                 <div class="col-sm-6">
                     <div class="minBoxRight">
                         <div class="row">
-                            <form id='#form-contact'>
+                            <form id='form-contact'>
                                 <div class="col-sm-12">
                                     <input class="form-control" name="nome" id="nome" placeholder="Nome*" required />
                                 </div>
@@ -275,7 +275,7 @@ $texto =  (explode(" ", $r[0]->title, 2));
                                     <input type="email" class="form-control" name="email" id="email" placeholder="E-mail" required />
                                 </div>
                                 <div class="col-sm-12">
-                                    <textarea class="form-control" name="projeto" id="projeto" cols="30" rows="3" placeholder="Qual o seu projeto?" required ></textarea>
+                                    <textarea class="form-control" name="projeto" id="projeto" cols="30" rows="3" placeholder="Qual o seu projeto?" required></textarea>
                                 </div>
                                 <div class="col-sm-12">
                                     <div class="pull-right">

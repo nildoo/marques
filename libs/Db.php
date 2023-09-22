@@ -5,10 +5,10 @@ class Db
 
     private $pdo;
     private $conn = [
-        'db_host' => '',
-        'db_name' => '',
-        'db_user' => '',
-        'db_pass' => ''
+        'db_host' => 'mysql.marquesmontagens.com.br',
+        'db_name' => 'marquesmontage02',
+        'db_user' => 'marquesmontage02',
+        'db_pass' => 'mydbweb1290'
     ];
 
     private $params;

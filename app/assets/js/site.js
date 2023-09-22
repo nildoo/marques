@@ -20,60 +20,72 @@ $(function () {
     //     }
     // });
 
-
-    //ACCORDION INITIAL
-    var bodyEl = $('body'),
-        accordionDT = $('.accordion').find('dt'),
-        accordionDD = accordionDT.next('dd'),
-        parentHeight = accordionDD.height(),
-        childHeight = accordionDD.children('.content').outerHeight(true),
-        newHeight = parentHeight > 0 ? 0 : childHeight,
-        accordionPanel = $('.accordion-panel'),
-        buttonsWrapper = accordionPanel.find('.buttons-wrapper'),
-        openBtn = accordionPanel.find('.open-btn'),
-        closeBtn = accordionPanel.find('.close-btn');
-
-    bodyEl.on('click', function (argument) {
-        var totalItems = $('.accordion').children('dt').length;
-        var totalItemsOpen = $('.accordion').children('dt.is-open').length;
-
-        if (totalItems == totalItemsOpen) {
-            openBtn.addClass('hidden');
-            closeBtn.removeClass('hidden');
-            buttonsWrapper.addClass('is-open');
-        } else {
-            openBtn.removeClass('hidden');
-            closeBtn.addClass('hidden');
-            buttonsWrapper.removeClass('is-open');
-        }
-    });
-
-
-    function openCloseItem() {
-        accordionDT.on('click', function () {
-
-            var el = $(this),
-                target = el.next('dd'),
-                parentHeight = target.height(),
-                childHeight = target.children('.content').outerHeight(true),
-                newHeight = parentHeight > 0 ? 0 : childHeight;
-
-            // animate to new height
-            target.css({
-                height: newHeight
-            });
-
-            // remove existing classes & add class to clicked target
-            if (!el.hasClass('is-open')) {
-                el.addClass('is-open');
-            }
-
-            // if we are on clicked target then remove the class
-            else {
-                el.removeClass('is-open');
+    $("#form-contact").submit(function () {
+        $.ajax({
+            data: {
+                action: 'contato',
+                nome: $("#nome").val(),
+                empresa: $("#empresa").val(),
+                email: $("#email").val(),
+                telefone: $("#telefone").val(),
+                projeto: $("#projeto").val()
+            },
+            dataType: 'json',
+            type: 'post',
+            url: 'app/actions/action.php',
+            success: function (response) {
+                if(response.error === false) {
+                    alert("Mensagem enviada com sucesso!");
+                    $("#form-contact")[0].reset();
+                } else {
+                    alert(response.msg);
+                }
             }
         });
-    }
-    openCloseItem();
-    //ACCORDION END
+
+        return false;
+
+    });
+
+    var enviar = $("button[type=submit]");
+    
+    $("#form-rh").on('submit', function () {
+
+        enviar = $(this).find('button[type=submit]');
+
+        var form = $("#form-rh")[0];
+        var formData = new FormData(form);
+
+        formData.append('action', "envio-rh");
+        formData.append('nome', $("#nome").val());
+        formData.append('email', $("#email").val());
+        formData.append('telefone', $("#telefone").val());
+        formData.append('mensagem', $("#mensagem").val());
+
+        $.ajax({
+            url: 'app/actions/action.php',
+            data: formData,
+            processData: false,
+            contentType: false,
+            type: 'post',
+            beforeSend: function () {
+                enviar.html("Enviando <i class='fa fa-refresh fa-spin'></i>");
+                enviar.attr('disabled', 'disabled');
+            },
+            success: function (response) {
+                enviar.removeAttr('disabled');
+                enviar.html("<i class='fa fa-check'></i> Enviado");
+                enviar.attr('disabled', 'disabled');
+
+                if (response.erro === false) {
+                    alert("Erro ao enviar Curriculum, tente novamente mais tarde!");
+                } else {
+                    alert("Curriculum enviado com sucesso!");
+                    form.reset();
+                }
+            }
+        });
+        return false;
+    });   
+
 });
