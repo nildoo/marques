@@ -28,7 +28,7 @@ class Db
 
         if ($_SERVER['REMOTE_ADDR'] == '::1') {
             $this->conn['db_host'] = 'localhost';
-            $this->conn['db_name'] = 'marques';
+            $this->conn['db_name'] = 'marques_producao';
             $this->conn['db_user'] = 'root';
             $this->conn['db_pass'] = '';
         }

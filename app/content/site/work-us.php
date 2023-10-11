@@ -26,7 +26,7 @@
                         <input class="form-control" name="telefone" id="telefone" placeholder="(DDD)+Telefone*" required />
                     </div>
                     <div class="col-sm-6">
-                        <input class="form-control" id="arquivo" type="file" placeholder="arquivo" name="arquivo" required>
+                        <input onchange="verificaExtensao(this)" accept=".pdf" class="form-control" id="arquivo" type="file" placeholder="arquivo" name="arquivo" required>
                     </div>
                     <div class="col-sm-12">
                         <textarea class="form-control" name="mensagem" id="mensagem" cols="30" rows="3" placeholder="Comente aqui" required></textarea>
@@ -56,4 +56,14 @@
     $(document).ready(function() {
         $('#telefone').mask('(00) 00000-0009')
     });
+    function verificaExtensao($input) {
+        var extPermitidas = ['pdf'];
+        var extArquivo = $input.value.split('.').pop();
+
+        if(typeof extPermitidas.find(function(ext){ return extArquivo == ext; }) == 'undefined') {
+            alert('Extensão "' + extArquivo + '" não permitida!');
+        } else {
+            alert('Extensão permitida!');
+        }
+    }
 </script>

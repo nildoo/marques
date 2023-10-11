@@ -23,31 +23,32 @@ $project = $Db->result();
     ?>
         <div class="blog">
             <div class="container">
-                <div class="row">
-                    <?php
-                    $Db->setParams([
-                        'table' => 'project_img',
-                        'condition' => [
-                            'f_id_project' => $project[0]->id
-                        ],
-                        'order' => 'id ASC'
-                    ]);
-                    $imgs = $Db->result();
+                <div class="row text-center">
+                    <ul class="galery-product">
+                        <?php
+                        $Db->setParams([
+                            'table' => 'project_img',
+                            'condition' => [
+                                'f_id_project' => $project[0]->id
+                            ],
+                            'order' => 'id ASC'
+                        ]);
+                        $imgs = $Db->result();
 
-                    //var_dump($imgs);
-                    foreach ($imgs as $img) { ?>
-                        <div class="col-sm-3">
-                            <div class="thumbnail">
-                                <a href="<?= IMG . 'galeria/' . $img->img ?>" class="lsb-preview" data-lsb-group="project">
-                                    <img src="<?= IMG . 'galeria/' . $img->img ?>" alt="<?= $project[0]->name?>" />
-                                </a>
-                            </div>
-                        </div>
-                    <?php } ?>
-                    
+                        //var_dump($imgs);
+                        foreach ($imgs as $img) { ?>
+
+                            <a href="<?= IMG . 'galeria/' . $img->img ?>" class="lsb-preview" data-lsb-group="project">
+                                <li style="background: url('<?= IMG . 'galeria/' . $img->img ?>') center center no-repeat;"></li>
+                            </a>
+                        <?php } ?>
+                    </ul>
+
                     <div class="clearfix"></div>
 
                     <div class="col-sm-12 text-center">
+                        <br />
+                        <br />
                         <a href="services"><button class="btn btn-blue"><i class="fa fa-arrow-left"></i> Voltar</button></a>
                     </div>
 

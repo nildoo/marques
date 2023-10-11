@@ -42,7 +42,7 @@ $config = $config[0];
                 showAutoPlayButton: false,
                 showImageCount: false,
                 autoPlayback: false,
-                locale:{
+                locale: {
                     nextButton: 'Próxima',
                     prevButton: 'Anterior',
                     closeButton: 'Fechar',

@@ -1385,6 +1385,20 @@ a:visited {
 .contact-new button {
   width: 180px;
 }
+.galery-product {
+  display: -ms-flexbox;
+  /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap;
+  /* IE10 */
+  flex-wrap: wrap;
+  text-align: center;
+}
+.galery-product a li {
+  height: 240px;
+  width: 275px;
+  margin: 4px;
+}
 .CookieMessage {
   position: fixed;
   width: 100%;

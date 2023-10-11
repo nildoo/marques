@@ -92,14 +92,14 @@ switch ($_POST['action']) {
 
     /* Layout da mensagem  */
     $corpo_mensagem = " 
-<br>Formulário via site
-<br>--------------------------------------------<br>
-<br><strong>Nome:</strong> $nome
-<br><strong>Email:</strong> $replyto
-<br><strong>Telefone:</strong> $telefone
-<br><strong>Mensagem:</strong> $comentario
-<br><br>--------------------------------------------
-";
+    <br>Formulário via site
+    <br>--------------------------------------------<br>
+    <br><strong>Nome:</strong> $nome
+    <br><strong>Email:</strong> $replyto
+    <br><strong>Telefone:</strong> $telefone
+    <br><strong>Mensagem:</strong> $comentario
+    <br><br>--------------------------------------------
+    ";
 
     /* Função que codifica o anexo para poder ser enviado na mensagem  */
     if (file_exists($arquivo["tmp_name"]) and !empty($arquivo)) {
